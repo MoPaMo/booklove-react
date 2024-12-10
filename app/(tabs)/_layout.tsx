@@ -48,6 +48,7 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="quotes"
         options={{
@@ -57,6 +58,19 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+      name="account"
+        options={{
+            title: "Account",
+            tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+                name={focused ? "person-circle" : "person-circle-outline"}
+                color={color}
+                size={24}
+            />
+            ),
+        }}
+        />
     </Tabs>
   );
 }

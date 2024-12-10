@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
-import { Image } from "expo-image";
+import ImageViewer from "@/components/ImageViewer";
+import Button from "@/components/Button";
 
 const PlaceholderImage = require("@/assets/images/background.jpg");
 
@@ -7,8 +8,10 @@ export default function AboutScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={PlaceholderImage} style={styles.image} />
+        <ImageViewer imgSource={PlaceholderImage}  />
+
       </View>
+        <Button label="Press me" />
       <Text style={styles.text}>About screen</Text>
     </View>
   );

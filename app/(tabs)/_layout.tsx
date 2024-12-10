@@ -1,5 +1,7 @@
 import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 export default function TabLayout() {
   return (
@@ -13,9 +15,9 @@ export default function TabLayout() {
         headerShadowVisible: false,
         headerTintColor: "#fff",
         tabBarStyle: {
-            backgroundColor: "#25292e",
-            borderTopColor: "#25292e",
-        }
+          backgroundColor: "#25292e",
+          borderTopColor: "#25292e",
+        },
       }}
     >
       <Tabs.Screen
@@ -43,6 +45,15 @@ export default function TabLayout() {
               color={color}
               size={24}
             />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="quotes"
+        options={{
+          title: "Quotes",
+          tabBarIcon: ({ color, focused }) => (
+            <MaterialCommunityIcons name="comment-quote" size={24} color={color} />
           ),
         }}
       />

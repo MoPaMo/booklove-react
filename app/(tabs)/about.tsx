@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
     fontSize: 64,
     color: colors.orange,
     textAlign: "left",
-    fontFamily: "DMSerifDisplay_400Regular",
     lineHeight: 64,
+    fontFamily: "PlayfairDisplay_900Black",
     flex: 1,
   },
 });

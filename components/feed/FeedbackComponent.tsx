@@ -98,12 +98,14 @@ const styles = StyleSheet.create({
   feedbackCard: {
     backgroundColor: colors.CleanBG,
     borderRadius: 23,
+    borderCurve: "continuous",
     padding: 20,
     shadowColor: colors.indigo,
     shadowOpacity: 0.5,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 0 },
     elevation: 5
+
   },
   title: {
     fontFamily: "PlayfairDisplay_400Regular",

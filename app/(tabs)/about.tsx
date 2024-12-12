@@ -10,7 +10,7 @@ export default function AboutScreen() {
       <View style={styles.topSection}>
         <Text style={[styles.header]}>Your Books</Text>
       </View>
-    <FeedbackComponent />
+      <FeedbackComponent />
     </Container>
   );
 }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 
   topSection: {
-    paddingTop: width < 700 ? height * 0.2: height * 0.1,
+    paddingTop: width < 700 ? height * 0.2 : height * 0.1,
     justifyContent: "flex-end",
     paddingBottom: 10, // Add padding if needed
   },

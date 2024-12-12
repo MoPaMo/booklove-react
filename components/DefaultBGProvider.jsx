@@ -1,7 +1,7 @@
 import { Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import BackgroundBlurElement from "@/components/BackgroundBlurElement";
 
-export default function Container({ children, style=0 }) {
+export default function Container({ children, style = 0 }) {
   return (
     <>
       <BackgroundBlurElement />

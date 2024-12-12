@@ -22,7 +22,7 @@ const BackgroundBlurElement = () => {
 
 const styles = StyleSheet.create({
   container: {
-    ...StyleSheet.absoluteFillObject, 
+    ...StyleSheet.absoluteFillObject,
     zIndex: 0,
     flex: 1,
     backgroundColor: colors.BG,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     bottom: 28,
   },
   image: {
-    resizeMode: width > 700 ? "contain" :"cover",
+    resizeMode: width > 700 ? "contain" : "cover",
   },
 });
 

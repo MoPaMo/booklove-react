@@ -15,7 +15,7 @@ const BackgroundBlurElement = () => {
         source={require("@/assets/images/backgrounds/blur_hex.png")}
         style={[styles.image, styles.originalBG2]}
       />
-      <BlurView intensity={50} style={StyleSheet.absoluteFill} />
+      <BlurView intensity={8} style={StyleSheet.absoluteFill} />
     </View>
   );
 };
@@ -28,14 +28,14 @@ const styles = StyleSheet.create({
   originalBG1: {
     position: "absolute",
     width: width * 0.61,
-    top: -height * 0.08,
-    right: -width * 0.5,
+    top: 0,
+    right: width * -0.1,
   },
   originalBG2: {
     position: "absolute",
     width: width * 0.79,
-    left: -width * 0.225,
-    top: 28,
+    left: width * -0.2,
+    bottom: 28,
   },
   image: {
     resizeMode: "cover",

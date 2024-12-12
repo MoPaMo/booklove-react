@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { View } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -14,10 +15,14 @@ export default function TabLayout() {
         },
         headerShown: false,
         headerShadowVisible: false,
-        headerTintColor: "#fff",
+        headerTintColor: "#fff0",
+
         tabBarStyle: {
-          backgroundColor: "#25292e",
-          borderTopColor: "#25292e",
+          shadowColor: "#25292e00",
+
+          backgroundColor: "#25292e00",
+          borderTopColor: "#25292e00",
+            borderTopWidth: 0,
         },
       }}
     >

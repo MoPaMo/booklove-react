@@ -37,6 +37,9 @@ App Version: ${Platform.constants.appVersion}
   const handleMeh = () => {
     setLikeState(2);
   };
+  const handleLeaveReview = () => {
+    alert("someone forgot to implement this feature");
+  };
 
   const renderContent = () => {
     switch (likeState) {

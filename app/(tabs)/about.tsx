@@ -7,7 +7,7 @@ export default function AboutScreen() {
     <View style={styles.container}>
       <BackgroundBlurElement option={5} />
       <View style={styles.content}>
-        <Text style={styles.text}>
+        <Text>
           Your actual content here Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Voluptas pariatur laudantium fuga cum dolores,
           beatae molestiae doloribus aut accusamus earum, omnis blanditiis
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
   },
   text: {},
   content: {
+    zIndex: 10,
     height: "100%",
 
     overflow: "scroll",

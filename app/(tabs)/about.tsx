@@ -8,7 +8,7 @@ export default function AboutScreen() {
     <Container>
       <Text style={styles.text}>
         <View style={styles.topSection}>
-          <Text style={defaultStyles.h2}>Your List</Text>
+          <Text style={defaultStyles.title}>Your List</Text>
         </View>
       </Text>
     </Container>

@@ -1,38 +1,32 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-type Props = {
-  label: string;
+const Button = ({ onPress, title }) => {
+  return (
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
+  );
 };
 
-export default function Button({ label }: Props) {
-  return (
-    <View style={styles.buttonContainer}>
-      <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
-        <Text style={styles.buttonLabel}>{label}</Text>
-      </Pressable>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  buttonContainer: {
-    width: 320,
-    height: 68,
-    marginHorizontal: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 3,
-  },
   button: {
-    borderRadius: 10,
-    width: '100%',
-    height: '100%',
+    backgroundColor: '#007AFF',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 8,
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
   },
-  buttonLabel: {
-    color: '#fff',
+  text: {
+    color: '#FFFFFF',
     fontSize: 16,
+    fontWeight: '600',
   },
 });
+
+export default Button;

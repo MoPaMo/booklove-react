@@ -32,11 +32,11 @@ const FeedbackView = () => {
     Linking.openURL(mailtoUrl);
   };
 
-  const handleLoveIt = () => {
+  const handleGood = () => {
     setLikeState(1);
   };
 
-  const handleMeh = () => {
+  const handleBad = () => {
     setLikeState(2);
   };
   const handleLeaveReview = () => {
@@ -69,11 +69,11 @@ const FeedbackView = () => {
           <View style={styles.controlGroup}>
             <TouchableOpacity
               style={styles.controlButton}
-              onPress={handleLoveIt}
+              onPress={handleGood}
             >
               <Text style={styles.controlText}>Love It!</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={handleMeh}>
+            <TouchableOpacity style={styles.controlButton} onPress={handleBad}>
               <Text style={[styles.controlText, { color: "red" }]}>
                 Meh, It's Aight
               </Text>

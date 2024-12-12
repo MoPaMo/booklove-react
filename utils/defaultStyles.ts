@@ -1,6 +1,7 @@
 import colors from "./colors";
+import { StyleSheet } from "react-native";
 
-const defaultStyles = {
+const defaultStyles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 16,
@@ -34,7 +35,7 @@ const defaultStyles = {
   },
   title: {
     fontSize: 28,
-    fontWeight: 800,
+    fontWeight: "800",
     color: colors.DarkBG,
     textAlign: "center",
     marginVertical: 16,
@@ -45,6 +46,6 @@ const defaultStyles = {
     textAlign: "center",
     marginVertical: 8,
   },
-};
+});
 
 export default defaultStyles;

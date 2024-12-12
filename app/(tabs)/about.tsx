@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     fontSize: 64,
     color: colors.orange,
     textAlign: "left",
-    fontFamily: "PlayfairDisplay_900Black",
+    fontFamily: "DMSerifDisplay_400Regular",
     lineHeight: 64,
     flex: 1,
   },

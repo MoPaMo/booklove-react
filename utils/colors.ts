@@ -24,6 +24,7 @@ const lightColors = {
   pink: "#FF2D55",
   brown: "#A5845E",
   gray: "#8E8E93",
+  lightGray: "#C7C7CC",
 };
 
 const lightAccessibleColors = {
@@ -44,6 +45,7 @@ const lightAccessibleColors = {
   purple: "#8944AB",
   pink: "#D30F45",
   brown: "#7F6545",
+  lightGray: "#C7C7CC",
   gray: "#8E8E93",
 };
 
@@ -65,6 +67,7 @@ const darkColors = {
   purple: "#BF5AF2",
   pink: "#FF375F",
   brown: "#AC8E68",
+  lightGray: "#C7C7CC",
   gray: "#8E8E93",
 };
 
@@ -85,6 +88,7 @@ const darkAccessibleColors = {
   indigo: "#7D7AFF",
   purple: "#DA8FFF",
   pink: "#FF6482",
+  lightGray: "#C7C7CC",
   brown: "#B59469",
   gray: "#8E8E93",
 };

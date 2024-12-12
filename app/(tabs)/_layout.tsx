@@ -2,13 +2,13 @@ import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { View } from "react-native";
-
+import colors from "@/utils/colors";
 export default function TabLayout() {
   return (
     <Tabs
       initialRouteName="index"
       screenOptions={{
-        tabBarActiveTintColor: "#ffd33d",
+        tabBarActiveTintColor: colors.blue,
         //headerShown: false,
         headerStyle: {
           backgroundColor: "#25292e",

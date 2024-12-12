@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import Container from '@/components/DefaultBGProvider';
 const Account = () => {
     return (
-        <View style={styles.container}>
+        <Container>
             <Text style={styles.text}>This is the Account screen</Text>
-        </View>
+        </Container>
     );
 };
 

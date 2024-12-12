@@ -1,12 +1,10 @@
 import { Text, View, StyleSheet } from "react-native";
-
+import Container from "@/components/DefaultBGProvider";
 export default function Quotes() {
   return (
-    <View
-      style={styles.container}
-    >
+    <Container>
       <Text style={styles.text}>Quotes</Text>
-    </View>
+    </Container>
   );
 }
 

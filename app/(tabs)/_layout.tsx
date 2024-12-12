@@ -5,7 +5,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 export default function TabLayout() {
   return (
     <Tabs
-      initialRouteName="feed"
+      initialRouteName="index"
       screenOptions={{
         tabBarActiveTintColor: "#ffd33d",
         //headerShown: false,
@@ -22,7 +22,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="feed"
+        name="index"
         options={{
           title: "Feed",
           tabBarIcon: ({ color, focused }) => (

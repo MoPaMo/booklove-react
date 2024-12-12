@@ -1,26 +1,10 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Link } from "expo-router";
-
-import { useEffect } from "react";
-import { useRouter } from "expo-router";
-
-export default function Index() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const redirect = async () => {
-      router.push("/feed");
-    };
-
-    redirect();
-  }, []);
-
+import { Text, View, StyleSheet } from "react-native";
+import FeedbackView from "@/components/feed/FeedbackView";
+export default function Feed() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
-      <Link href="/about" style={styles.button}>
-        About
-      </Link>
+      <Text style={styles.text}>Feed</Text>
+        <FeedbackView />
     </View>
   );
 }
@@ -34,9 +18,5 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-  },
-  button: {
-    color: "#fff",
-    marginTop: 20,
   },
 });

@@ -6,36 +6,30 @@ import defaultStyles from "@/utils/defaultStyles";
 export default function AboutScreen() {
   return (
     <Container>
-      <Text style={styles.text}>
-        <View style={styles.topSection}>
-          <Text style={[styles.header]}>Your List</Text>
-        </View>
-      </Text>
+      <View style={styles.topSection}>
+        <Text style={[styles.header]}>Your Books</Text>
+      </View>
     </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 16,
-  },
-  h2: {
-    fontSize: 24,
-    textAlign: "left",
-    color: colors.yellow,
-  },
-  topSection: {
-    height: 100,
-    justifyContent: "flex-end",
-  },
-  text: {
-    fontSize: 16,
-    textAlign: "left",
-  },
-  header:{
-    fontSize: 24,
-    color: colors.yellow,
-    textAlign: "left",
-  }
-});
+    container: {
+      flex: 1,
+      margin: 16,
+    },
+  
+    topSection: {
+      justifyContent: "flex-end",
+      paddingBottom: 10, // Add padding if needed
+    },
+  
+    header: {
+      flexWrap: "wrap",
+      fontSize: 64, 
+      color: colors.orange,
+      textAlign: "left",
+      fontFamily: "Butler",
+      flex: 1,
+    },
+  });

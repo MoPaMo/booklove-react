@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: 10,
-    backgroundColor: `${colors.gray}00`, // 0.95 opacity
+    backgroundColor: `#ffffff00`, // 0.95 opacity
     borderRadius: 23,
     shadowColor: `${colors.indigo}80`,
     shadowRadius: 10,

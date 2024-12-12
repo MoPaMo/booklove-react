@@ -8,59 +8,60 @@ export default function AboutScreen() {
       <SafeAreaView style={styles.container}>
         <ScrollView>
           <Text style={styles.text}>
-            Your actual content here ...... Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Dolore, deserunt reprehenderit
-            laboriosam modi dolor voluptatum. Consequatur fugit animi
-            praesentium architecto error enim aliquid. Autem ratione saepe sunt
-            ab, deleniti officiis. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Odit nostrum quidem repellat, quas recusandae
-            omnis magni a est magnam veniam quam minus perspiciatis ad expedita
-            aliquid ex ipsam! Harum, beatae. Dolorem repudiandae voluptatem
-            voluptatum dolor natus corporis, inventore quis aperiam praesentium
-            sapiente molestias provident error assumenda sed. Ipsa consectetur
-            doloremque culpa fuga ipsam delectus quidem, itaque totam architecto
-            obcaecati esse? Numquam perferendis odio molestias voluptas impedit
-            distinctio similique officiis necessitatibus placeat deleniti,
-            tempora maiores accusantium sapiente, quod aliquid amet deserunt,
-            provident dolor nemo? Nostrum reprehenderit omnis quidem odit
-            incidunt autem. Explicabo officia magni asperiores dolores, ipsa
-            beatae saepe sint quam doloribus nulla repudiandae laboriosam in
-            fugiat odit debitis est neque omnis, nihil optio voluptatibus ipsum
-            aperiam eius ratione. Aspernatur, quibusdam. Esse quidem eum libero
-            voluptatibus, impedit deserunt eveniet enim nemo non ab ullam
-            maiores alias sunt temporibus dignissimos officia tempora molestiae
-            aliquam vero harum quis repellat quam omnis. Sit, officia? Aliquam
-            voluptates, eum expedita suscipit temporibus aspernatur! Eaque rem
-            quam recusandae libero veritatis? Accusamus voluptatem quibusdam
-            aperiam laboriosam delectus quidem voluptatum. Corrupti aperiam
-            delectus id nulla mollitia, exercitationem beatae consequatur.
-            Provident reiciendis nemo iusto, fugit ducimus aliquam hic neque
-            expedita, labore sint consequatur doloremque repudiandae facilis,
-            eveniet autem dicta! Officiis hic harum consequatur placeat.
-            Perspiciatis ex magni nisi vero minima. Distinctio dolorem
-            dignissimos nobis sint asperiores animi quos ex rerum quam ducimus
-            tenetur quasi, dicta autem eveniet incidunt nesciunt repudiandae
-            dolore repellat dolor itaque! Eaque ratione deleniti iusto
-            necessitatibus nihil. Inventore, reprehenderit eum facilis, error
-            sunt delectus exercitationem nihil cumque vel porro incidunt nostrum
-            odio maiores similique ipsam repellat velit harum ipsum perspiciatis
-            labore rerum animi dolore. Veniam, saepe quibusdam. Accusantium,
-            quos beatae? Rerum eius nobis dolorem vero! At perferendis porro
-            accusamus iure laudantium nesciunt magnam natus nulla quas,
-            consequatur consectetur. Ad assumenda magnam molestiae temporibus
-            modi velit, soluta dolorum? Esse praesentium neque dicta quidem
-            consectetur rem hic ea necessitatibus officiis assumenda fugit iure
-            illum omnis eum eveniet nesciunt, voluptate rerum eaque error,
-            voluptatem pariatur. Atque, rerum. Sed, hic mollitia! Qui, facilis
-            consequuntur totam nihil est temporibus doloremque magnam soluta
-            adipisci deleniti? Tempora deserunt nesciunt velit, blanditiis cum
-            provident hic necessitatibus, numquam perferendis, temporibus
-            commodi. Autem repellat dignissimos obcaecati eos. Eveniet, magni
-            odit? Accusamus molestiae harum at fugiat corporis atque in!
-            Veritatis rerum cumque iste sunt soluta cupiditate molestias ex quod
-            quisquam officiis, similique praesentium nemo impedit, eaque, illo
-            odio! Totam, accusantium. Deleniti nostrum ut aspernatur sint, neque
-            alias, delectus at eius debitis itaque ea dicta quia veritatis. Iste
+            Your actual content here .....
+            <br />. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Dolore, deserunt reprehenderit laboriosam modi dolor voluptatum.
+            Consequatur fugit animi praesentium architecto error enim aliquid.
+            Autem ratione saepe sunt ab, deleniti officiis. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Odit nostrum quidem repellat,
+            quas recusandae omnis magni a est magnam veniam quam minus
+            perspiciatis ad expedita aliquid ex ipsam! Harum, beatae. Dolorem
+            repudiandae voluptatem voluptatum dolor natus corporis, inventore
+            quis aperiam praesentium sapiente molestias provident error
+            assumenda sed. Ipsa consectetur doloremque culpa fuga ipsam delectus
+            quidem, itaque totam architecto obcaecati esse? Numquam perferendis
+            odio molestias voluptas impedit distinctio similique officiis
+            necessitatibus placeat deleniti, tempora maiores accusantium
+            sapiente, quod aliquid amet deserunt, provident dolor nemo? Nostrum
+            reprehenderit omnis quidem odit incidunt autem. Explicabo officia
+            magni asperiores dolores, ipsa beatae saepe sint quam doloribus
+            nulla repudiandae laboriosam in fugiat odit debitis est neque omnis,
+            nihil optio voluptatibus ipsum aperiam eius ratione. Aspernatur,
+            quibusdam. Esse quidem eum libero voluptatibus, impedit deserunt
+            eveniet enim nemo non ab ullam maiores alias sunt temporibus
+            dignissimos officia tempora molestiae aliquam vero harum quis
+            repellat quam omnis. Sit, officia? Aliquam voluptates, eum expedita
+            suscipit temporibus aspernatur! Eaque rem quam recusandae libero
+            veritatis? Accusamus voluptatem quibusdam aperiam laboriosam
+            delectus quidem voluptatum. Corrupti aperiam delectus id nulla
+            mollitia, exercitationem beatae consequatur. Provident reiciendis
+            nemo iusto, fugit ducimus aliquam hic neque expedita, labore sint
+            consequatur doloremque repudiandae facilis, eveniet autem dicta!
+            Officiis hic harum consequatur placeat. Perspiciatis ex magni nisi
+            vero minima. Distinctio dolorem dignissimos nobis sint asperiores
+            animi quos ex rerum quam ducimus tenetur quasi, dicta autem eveniet
+            incidunt nesciunt repudiandae dolore repellat dolor itaque! Eaque
+            ratione deleniti iusto necessitatibus nihil. Inventore,
+            reprehenderit eum facilis, error sunt delectus exercitationem nihil
+            cumque vel porro incidunt nostrum odio maiores similique ipsam
+            repellat velit harum ipsum perspiciatis labore rerum animi dolore.
+            Veniam, saepe quibusdam. Accusantium, quos beatae? Rerum eius nobis
+            dolorem vero! At perferendis porro accusamus iure laudantium
+            nesciunt magnam natus nulla quas, consequatur consectetur. Ad
+            assumenda magnam molestiae temporibus modi velit, soluta dolorum?
+            Esse praesentium neque dicta quidem consectetur rem hic ea
+            necessitatibus officiis assumenda fugit iure illum omnis eum eveniet
+            nesciunt, voluptate rerum eaque error, voluptatem pariatur. Atque,
+            rerum. Sed, hic mollitia! Qui, facilis consequuntur totam nihil est
+            temporibus doloremque magnam soluta adipisci deleniti? Tempora
+            deserunt nesciunt velit, blanditiis cum provident hic
+            necessitatibus, numquam perferendis, temporibus commodi. Autem
+            repellat dignissimos obcaecati eos. Eveniet, magni odit? Accusamus
+            molestiae harum at fugiat corporis atque in! Veritatis rerum cumque
+            iste sunt soluta cupiditate molestias ex quod quisquam officiis,
+            similique praesentium nemo impedit, eaque, illo odio! Totam,
+            accusantium. Deleniti nostrum ut aspernatur sint, neque alias,
+            delectus at eius debitis itaque ea dicta quia veritatis. Iste
             temporibus, delectus omnis at quae ea enim similique hic labore
             adipisci. Aperiam consectetur quaerat nihil, ea ducimus laborum aut
             officia nobis repellat sint temporibus, quas recusandae eligendi
@@ -107,9 +108,10 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    margin: 16,
   },
   text: {
     fontSize: 16,
-    textAlign: "center",
+    textAlign: "left",
   },
 });

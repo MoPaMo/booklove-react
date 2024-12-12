@@ -1,7 +1,17 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React from "react";
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  GestureResponderEvent,
+} from "react-native";
 
-const Button = ({ onPress, title }) => {
+interface ButtonProps {
+  onPress: (event: GestureResponderEvent) => void;
+  title: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ onPress, title }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
@@ -11,21 +21,21 @@ const Button = ({ onPress, title }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#007AFF',
+    backgroundColor: "#007AFF",
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 8,
-    alignItems: 'center',
-    shadowColor: '#000',
+    alignItems: "center",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
   },
   text: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });
 

@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, SafeAreaView } from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import BackgroundBlurElement from "@/components/BackgroundBlurElement";
 
 export default function AboutScreen() {
@@ -6,7 +6,7 @@ export default function AboutScreen() {
     <>
       <BackgroundBlurElement />
       <SafeAreaView style={styles.container}>
-        <View style={styles.content}>
+        <ScrollView>
           <Text style={styles.text}>
             Your actual content here ...... Lorem ipsum, dolor sit amet
             consectetur adipisicing elit. Dolore, deserunt reprehenderit
@@ -98,7 +98,7 @@ export default function AboutScreen() {
             cupiditate reprehenderit ut in magni unde nemo assumenda nam ea, sed
             laboriosam, rem ex suscipit voluptatem. Aperiam laboriosam quo in.
           </Text>
-        </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
@@ -107,7 +107,6 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflowY: "scroll",
   },
   text: {
     fontSize: 16,

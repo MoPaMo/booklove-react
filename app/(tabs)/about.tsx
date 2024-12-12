@@ -7,19 +7,133 @@ export default function AboutScreen() {
     <View style={styles.container}>
       <BackgroundBlurElement option={5} />
       <View style={styles.content}>
-        <Text>Your actual content here</Text>
+        <Text style={styles.text}>
+          Your actual content here Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Voluptas pariatur laudantium fuga cum dolores,
+          beatae molestiae doloribus aut accusamus earum, omnis blanditiis
+          aperiam facere dolor deleniti neque sequi magni! Sit? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptas pariatur laudantium fuga cum dolores, beatae molestiae
+          doloribus aut accusamus earum, omnis blanditiis aperiam facere dolor
+          deleniti neque sequi magni! Sit? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas pariatur laudantium fuga cum
+          dolores, beatae molestiae doloribus aut accusamus earum, omnis
+          blanditiis aperiam facere dolor deleniti neque sequi magni! Sit? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur
+          laudantium fuga cum dolores, beatae molestiae doloribus aut accusamus
+          earum, omnis blanditiis aperiam facere dolor deleniti neque sequi
+          magni! Sit?
+        </Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    content: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  });
+  container: {
+    flex: 1,
+  },
+  text: {},
+  content: {
+    height: "100%",
+
+    overflow: "scroll",
+
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

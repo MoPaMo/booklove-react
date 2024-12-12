@@ -34,7 +34,7 @@ const defaultStyles = {
   },
   title: {
     fontSize: 28,
-    fontWeight: "bold",
+    fontWeight: 800,
     color: colors.DarkBG,
     textAlign: "center",
     marginVertical: 16,

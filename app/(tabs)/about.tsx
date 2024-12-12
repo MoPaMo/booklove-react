@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import Container from "@/components/DefaultBGProvider";
 import colors from "@/utils/colors";
-import defaultStyles from "@/utils/defaultStyles";
+
 
 export default function AboutScreen() {
   return (
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     },
   
     topSection: {
+        paddingTop: 0, 
       justifyContent: "flex-end",
       paddingBottom: 10, // Add padding if needed
     },
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
       fontSize: 64, 
       color: colors.orange,
       textAlign: "left",
-      fontFamily: "Butler",
+      fontFamily: "PlayfairDisplay_900Black",
+      lineHeight: 64,
       flex: 1,
     },
   });

@@ -8,7 +8,7 @@ export default function AboutScreen() {
     <Container>
       <Text style={styles.text}>
         <View style={styles.topSection}>
-          <Text style={[defaultStyles.title]}>Your List</Text>
+          <Text style={[styles.header]}>Your List</Text>
         </View>
       </Text>
     </Container>
@@ -33,4 +33,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "left",
   },
+  header:{
+    fontSize: 24,
+    color: colors.yellow,
+    textAlign: "left",
+  }
 });

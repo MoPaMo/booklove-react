@@ -5,6 +5,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 export default function TabLayout() {
   return (
     <Tabs
+      initialRouteName="feed"
       screenOptions={{
         tabBarActiveTintColor: "#ffd33d",
         //headerShown: false,
@@ -25,11 +26,7 @@ export default function TabLayout() {
         options={{
           title: "Feed",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name="newspaper" 
-              color={color}
-              size={24}
-            />
+            <Ionicons name="newspaper" color={color} size={24} />
           ),
         }}
       />
@@ -52,11 +49,7 @@ export default function TabLayout() {
         options={{
           title: "List",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name="library"
-              color={color}
-              size={24}
-            />
+            <Ionicons name="library" color={color} size={24} />
           ),
         }}
       />

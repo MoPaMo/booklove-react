@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     bottom: 28,
   },
   image: {
-    resizeMode: "cover",
+    resizeMode: "contain",
   },
 });
 

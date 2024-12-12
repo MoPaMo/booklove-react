@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     zIndex: 0,
     flex: 1,
-    backgroundColor: colors.BG,
+    backgroundColor: colors.CleanBG,
     color: colors.primaryText,
   },
   originalBG1: {

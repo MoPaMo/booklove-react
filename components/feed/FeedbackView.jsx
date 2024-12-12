@@ -18,12 +18,14 @@ const FeedbackView = () => {
   const [likeState, setLikeState] = useState(0);
 
   const handleSendFeedback = () => {
-    const deviceInfo = `
-Device Model: ${Platform.constants.Model}
-System Name: ${Platform.OS}
-System Version: ${Platform.Version}
-App Version: ${Platform.constants.appVersion}
-    `;
+    const deviceInfo = JSON.stringify({
+      platform: Platform.OS || "unknown",
+      version: Platform.Version || "unknown",
+      model: Platform.Model || "unknown",
+      manufacturer: Platform.Manufacturer || "unknown",
+      constants: Platform.constants || "unknown",
+      buildNumber: Platform.constants?.buildNumber || "unknown",
+    });
     const subject = "Booklove Feedback";
     const body = encodeURIComponent(deviceInfo);
     const mailtoUrl = `mailto:feedback@getbooklove.app?subject=${subject}&body=${body}`;

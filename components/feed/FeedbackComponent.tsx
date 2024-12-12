@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   feedbackCard: {
-    backgroundColor: colors.CleanBG+'0f', 
+    backgroundColor: colors.CleanBG+'df', 
     borderRadius: 23,
     padding: 20,
     shadowColor: colors.indigo, 
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   button: {
-    backgroundColor: colors.CleanBG, 
+    backgroundColor: colors.CleanBG+'0f', 
     borderRadius: 23,
     paddingVertical: 10,
     paddingHorizontal: 20,

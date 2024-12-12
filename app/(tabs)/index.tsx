@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
-import FeedbackView from "@/components/feed/FeedbackView";
+
+import FeedbackView from "@/components/feed/FeedbackComponent";
 import Container from "@/components/DefaultBGProvider";
 export default function Feed() {
   return (

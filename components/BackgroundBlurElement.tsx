@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject, 
     zIndex: 0,
+    flex: 1,
   },
   originalBG1: {
     position: "absolute",
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     bottom: 28,
   },
   image: {
-    resizeMode: "contain",
+    resizeMode: width > 700 ? "contain" :"cover",
   },
 });
 

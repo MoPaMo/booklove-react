@@ -23,7 +23,7 @@ const FeedbackView = () => {
     const body = encodeURIComponent(deviceInfo);
     const mailtoUrl = `mailto:feedback@getbooklove.app?subject=${subject}&body=${body}`;
     Linking.openURL(mailtoUrl);
-};
+}
 
   return (
     <View style={styles.container}>
@@ -42,7 +42,6 @@ const FeedbackView = () => {
         {likeState === 1 && (
           <TouchableOpacity style={styles.button} onPress={handleReview}>
             <Text style={styles.buttonText}>
-              {/* Adjust icons as needed for React Native */}
               Leave a review 
             </Text>
           </TouchableOpacity>
@@ -62,7 +61,7 @@ const FeedbackView = () => {
               <Text style={styles.buttonText}>Love It!</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.button, { borderColor: colors.red }]} // Use your color variable
+              style={[styles.button, { borderColor: colors.red }]} 
               onPress={() => setLikeState(2)}
             >
               <Text style={[styles.buttonText, { color: colors.red }]}>Meh, It's Aight</Text>
@@ -82,19 +81,19 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   feedbackCard: {
-    backgroundColor: colors.CleanBG+'0f', // Use your color variable
+    backgroundColor: colors.CleanBG+'0f', 
     borderRadius: 23,
     padding: 20,
-    shadowColor: colors.indigo, // Use your color variable
+    shadowColor: colors.indigo, 
     shadowOpacity: 0.5,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 0 },
-    elevation: 5, // For Android shadow
+    elevation: 5, 
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: colors.indigo, // Use your color variable
+    color: colors.indigo, 
     textAlign: 'center',
     marginBottom: 10,
   },
@@ -108,16 +107,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   button: {
-    backgroundColor: colors.CleanBG, // Use your color variable
+    backgroundColor: colors.CleanBG, 
     borderRadius: 23,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderWidth: 1,
-    borderColor: colors.indigo, // Use your color variable
+    borderColor: colors.indigo, 
   },
   buttonText: {
     fontFamily: 'PlayfairDisplay_400Regular',
-    color: colors.indigo, // Use your color variable
+    color: colors.indigo, 
     fontSize: 16,
     textAlign: 'center',
   },

@@ -1,41 +1,34 @@
-import React from "react";
-import {
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-  GestureResponderEvent,
-} from "react-native";
+
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet, GestureResponderEvent } from 'react-native';
+import colors from '@/utils/colors';
 
 interface ButtonProps {
   onPress: (event: GestureResponderEvent) => void;
-  title: string;
+  children: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ onPress, title }) => {
+const Button: React.FC<ButtonProps> = ({ onPress, children  }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text}>{children}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#007AFF",
+    borderWidth: 2,
+    borderColor: colors.blue,
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 8,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
+    alignItems: 'center',
   },
   text: {
-    color: "#FFFFFF",
+    color: colors.blue,
     fontSize: 16,
-    fontWeight: "600",
+    fontWeight: '600',
   },
 });
 

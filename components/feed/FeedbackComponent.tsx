@@ -36,21 +36,14 @@ const FeedbackView = () => {
   return (
     <View style={styles.container}>
       <View style={styles.feedbackCard}>
-        <Text
-          style={[styles.title, { fontFamily: "PlayfairDisplay_400Regular" }]}
-        >
+        <Text style={[styles.title]}>
           {likeState === 0
             ? "Spill the Beans!"
             : likeState === 1
             ? "Amazing!"
             : "Uh-oh!"}
         </Text>
-        <Text
-          style={[
-            styles.subtitle,
-            { fontFamily: "PlayfairDisplay_400Regular" },
-          ]}
-        >
+        <Text style={[styles.subtitle]}>
           {likeState === 0
             ? " How's Your booklove Experience so far?"
             : likeState === 1
@@ -103,23 +96,24 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   feedbackCard: {
-    backgroundColor: colors.CleanBG + "df",
+    backgroundColor: colors.CleanBG,
     borderRadius: 23,
     padding: 20,
     shadowColor: colors.indigo,
     shadowOpacity: 0.5,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 0 },
-    elevation: 5,
+    elevation: 5
   },
   title: {
+    fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 24,
-    fontWeight: "bold",
     color: colors.indigo,
     textAlign: "center",
     marginBottom: 10,
   },
   subtitle: {
+    fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 16,
     textAlign: "center",
     marginBottom: 20,

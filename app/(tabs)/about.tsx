@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import Container from "@/components/DefaultBGProvider";
 import colors from "@/utils/colors";
 import { Dimensions } from "react-native";
-
+import FeedbackComponent from "@/components/feed/FeedbackComponent";
 let { width, height } = Dimensions.get("window");
 export default function AboutScreen() {
   return (
@@ -10,6 +10,7 @@ export default function AboutScreen() {
       <View style={styles.topSection}>
         <Text style={[styles.header]}>Your Books</Text>
       </View>
+    <FeedbackComponent />
     </Container>
   );
 }

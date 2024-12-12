@@ -6,7 +6,6 @@ const defaultStyles = {
     },
     h2: {
         fontSize: 24,
-        textAlign: "left",
         color: colors.yellow,
     
     },

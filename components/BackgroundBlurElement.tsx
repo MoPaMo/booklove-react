@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, StyleSheet, Dimensions } from "react-native";
 import { BlurView } from "expo-blur";
-
+import colors from "@/utils/colors";
 const { width, height } = Dimensions.get("window");
 
 const BackgroundBlurElement = () => {
@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject, 
     zIndex: 0,
     flex: 1,
+    backgroundColor: colors.BG,
+    color: colors.primaryText,
   },
   originalBG1: {
     position: "absolute",

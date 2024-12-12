@@ -71,10 +71,10 @@ const FeedbackView = () => {
               style={styles.controlButton}
               onPress={handleGood}
             >
-              <Text style={styles.controlText}>Love It!</Text>
+              <Text style={[styles.controlText, styles.button]}>Love It!</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.controlButton} onPress={handleBad}>
-              <Text style={[styles.controlText, { color: "red" }]}>
+              <Text style={[styles.controlText, styles.button]}>
                 Meh, It's Aight
               </Text>
             </TouchableOpacity>
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: 10,
-    backgroundColor: `${colors.CleanBG}f2`, // 0.95 opacity
+    backgroundColor: `${colors.gray}00`, // 0.95 opacity
     borderRadius: 23,
     shadowColor: `${colors.indigo}80`,
     shadowRadius: 10,

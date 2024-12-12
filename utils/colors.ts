@@ -57,6 +57,8 @@ const colors = {
   brown: colorScheme === "dark" ? "rgb(172, 142, 104)" : "rgb(165, 132, 94)",
   brownAccessible:
     colorScheme === "dark" ? "rgb(181, 148, 105)" : "rgb(127, 101, 69)",
+
+  gray: "rgb(142, 142, 147)", 
 };
 
 export default colors;

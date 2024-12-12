@@ -1,5 +1,7 @@
 import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import Container from "@/components/DefaultBGProvider";
+import colors from "@/utils/colors";
+import defaultStyles from "@/utils/defaultStyles";
 export default function AboutScreen() {
   return (
     <Container>
@@ -20,6 +22,8 @@ const styles = StyleSheet.create({
   h2: {
     fontSize: 24,
     textAlign: "left",
+    color: colors.yellow,
+
   },
   topSection: {
     height: 100,

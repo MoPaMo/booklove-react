@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
 
   topSection: {
-    paddingTop: height * 0.2,
+    paddingTop: width < 700 ? height * 0.2: height * 0.1,
     justifyContent: "flex-end",
     paddingBottom: 10, // Add padding if needed
   },

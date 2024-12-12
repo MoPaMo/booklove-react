@@ -12,7 +12,6 @@ export default function TabLayout() {
           backgroundColor: "#25292e",
         },
         headerShown: false,
-        
         headerShadowVisible: false,
         headerTintColor: "#fff",
         tabBarStyle: {
@@ -21,7 +20,6 @@ export default function TabLayout() {
         },
       }}
     >
-
       <Tabs.Screen
         name="feed"
         options={{

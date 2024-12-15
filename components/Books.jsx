@@ -179,6 +179,83 @@ const Book = ({ route }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.background, 
+  },
+  content: {
+    padding: 20,
+  },
+  loadingContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  loadingTitle: {
+    width: 200,
+    height: 40,
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+  loadingAuthor: {
+    width: 150,
+    height: 20,
+    borderRadius: 5,
+  },
+  title: {
+    fontFamily: 'PlayfairDisplay_700Bold', 
+    fontSize: 40,
+    color: colors.cyan, 
+    marginBottom: 10,
+  },
+  author: {
+    fontFamily: 'PlayfairDisplay_400Regular', 
+    fontSize: 20,
+    color: colors.primaryText, 
+    marginBottom: 10,
+  },
+  divider: {
+    width: '80%',
+    height: 0.5,
+    backgroundColors: colors.divider, 
+    marginVertical: 20,
+    alignSelf: 'center',
+  },
+  description: {
+    fontFamily: 'PlayfairDisplay_400Regular', 
+    fontSize: 16,
+    color: colors.primaryText, 
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: colors.buttonBackground, 
+    borderRadius: 21,
+    width: 161,
+    height: 53,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonLiked: {
+    backgroundColor: colors.red, 
+  },
+  buttonIcon: {
+    width: 20,
+    height: 20,
+    tintColor: colors.primaryText, 
+  },
+  buttonIconLiked: {
+    tintColor: colors.white, 
+  },
+  genresContainer: {
+    marginBottom: 20,
+  }
+});
 
 export default Book;

@@ -1,21 +1,17 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
-
+import SimpleAvatar from "@/components/SimpleAvatar";
 const UserStack = () => {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../assets/images/memoji.png")}
-        style={[styles.image, { marginLeft: 0 }]}
-      />
-      <Image
-        source={require("../assets/images/memoji.png")}
-        style={styles.image}
-      />
-      <Image
-        source={require("../assets/images/memoji.png")}
-        style={styles.image}
-      />
+      {[...Array(5)].map((_, index) => (
+        <SimpleAvatar
+          key={index}
+          size={50}
+          source={require("@/assets/images/memoji.png")}
+          style={{ marginLeft: index === 0 ? 0 : -20 }}
+        />
+      ))}
     </View>
   );
 };
@@ -24,15 +20,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-  },
-  image: {
-    width: 50,
-    height: 50,
-    marginLeft: -20,
-    borderColor: "#333",
-    borderWidth: 1,
-    borderRadius: 5000,
-    backgroundColor: "#fff",
   },
 });
 

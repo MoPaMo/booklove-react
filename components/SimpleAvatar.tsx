@@ -5,9 +5,11 @@ import { ImageSourcePropType } from "react-native";
 const SimpleAvatar = ({
   source,
   size = 50,
+  style = {},
 }: {
   source: ImageSourcePropType;
   size?: number;
+  style?: any;
 }) => {
   return (
     <Image
@@ -19,7 +21,10 @@ const SimpleAvatar = ({
         borderWidth: 1,
         borderRadius: 5000,
         backgroundColor: "#fff",
+        ...style,
       }}
     />
   );
 };
+
+export default SimpleAvatar;

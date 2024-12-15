@@ -3,25 +3,22 @@ import { Text as RNText, StyleSheet } from "react-native"; // rename to avoid co
 import colors from "@/utils/colors";
 
 interface TextProps {
-  fontStyle?: "serif" | "sansSerif" | "mono";
+  design?: "serif" | "sansSerif" | "mono";
   style?: any;
   children: React.ReactNode;
 }
 
 const Text = (props: TextProps) => {
-  const { fontStyle = "sansSerif", style, children, ...rest } = props;
+  const { design = "sansSerif", style, children, ...rest } = props;
 
-  const fontStyles = {
+  const designs = {
     serif: { fontFamily: "PlayfairDisplay_400Regular" },
     sansSerif: { fontFamily: "Raleway_400Regular" },
     mono: { fontFamily: "RobotoMono_400Regular" },
   };
 
   return (
-    <RNText
-      style={[styles.text, fontStyle && fontStyles[fontStyle], style]}
-      {...rest}
-    >
+    <RNText style={[styles.text, design && designs[design], style]} {...rest}>
       {children}
     </RNText>
   );

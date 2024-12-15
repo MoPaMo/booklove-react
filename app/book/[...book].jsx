@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import { useFonts } from "expo-font";
 import {
   PlayfairDisplay_900Black,
@@ -11,6 +11,7 @@ import colors from "@/utils/colors";
 import HeaderTitle from "@/components/headerTitle";
 import BookButtonStack from "@/components/BookButtonStack";
 import Container from "@/components/DefaultBGProvider";
+import Text from "@/components/utils/text";
 
 export default function Book() {
   return (

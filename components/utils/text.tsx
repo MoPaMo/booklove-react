@@ -19,8 +19,8 @@ const Text = (props: TextProps) => {
 
   return (
     <RNText
-      {...rest}
       style={[styles.text, fontStyle && fontStyles[fontStyle], style]}
+      {...rest}
     >
       {children}
     </RNText>

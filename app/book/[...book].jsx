@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     tintColor: colors.primaryText,
   },
   sheet: {
-    backgroundColor: colors.sheetBackground,
+    backgroundColor: colors.lightGray,
     padding: 20,
     position: "absolute",
     bottom: 0,

@@ -10,7 +10,7 @@ import UserStack from "@/components/userStack";
 export default function Book() {
   return (
     <Container>
-      <HeaderTitle color={colors.blue}>Pride and Prejudice</HeaderTitle>
+      <HeaderTitle color={colors.cyan}>Pride and Prejudice</HeaderTitle>
       <Text style={styles.author}>Jane Austen, 1813</Text>
       <View style={styles.divider} />
       <Text style={styles.description}>
@@ -24,13 +24,13 @@ export default function Book() {
       <View style={styles.divider} />
 
       <View style={[styles.readByGroup]}>
-        <Text style={[styles.readBy]}>Read by</Text>
+        <Text style={[styles.readBy]} design="sansSerif">Read by </Text>
         <UserStack />
       </View>
 
       <View style={styles.comment}>
         <Ionicons name="person-circle-outline" size={40} color="black" />
-        <Text style={styles.commentText}>
+        <Text style={styles.commentText} >
           <Text style={styles.commentAuthor}>Amazing! ~</Text> Jane
         </Text>
       </View>
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   readBy: {
-    fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 16,
     marginBottom: 10,
   },

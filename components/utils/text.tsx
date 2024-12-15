@@ -1,5 +1,5 @@
 import React from "react";
-import { Text as RNText, StyleSheet } from "react-native";
+import { Text as RNText, StyleSheet } from "react-native"; // rename to avoid conflict with custom
 import colors from "@/utils/colors";
 const Text = (props: any) => {
   return (

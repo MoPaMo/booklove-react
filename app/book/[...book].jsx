@@ -18,8 +18,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
-    <HeaderTitle color={colors.blue}> Pride and Prejudice</HeaderTitle>
+      <HeaderTitle color={colors.blue}>Pride and Prejudice</HeaderTitle>
       <Text style={styles.author}>Jane Austen, 1813</Text>
 
       <Text style={styles.description}>

@@ -4,7 +4,7 @@ import { ActivityIndicator } from "react-native";
 import { BlurView } from "expo-blur";
 import axios from "axios";
 import colors from "@/utils/colors";
-
+import {baseURL} from "@/utils/api";
 const BookQuizView = ({ triggerSearch }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -21,7 +21,7 @@ const BookQuizView = ({ triggerSearch }) => {
   const fetchQuiz = async () => {
     try {
       setError(null);
-      const response = await axios.get("https://api.getbooklove.app/quiz", {
+      const response = await axios.get(baseURL+"/quiz", {
         params: {
           seed: 123456,
           paginationIndex: 0,

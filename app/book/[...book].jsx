@@ -30,6 +30,9 @@ export default function Book() {
         <UserStack />
       </View>
 
+        <Text design="sansSerif" weight="bold" style={styles.readBy}>
+            Comments
+        </Text>
       <View style={styles.comment}>
         <Ionicons name="person-circle-outline" size={40} color="black" />
         <Text style={styles.commentText}>

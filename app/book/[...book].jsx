@@ -44,16 +44,6 @@ export default function Book() {
 }
 
 const styles = StyleSheet.create({
-  topBar: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  time: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 16,
-  },
   divider: {
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
@@ -63,17 +53,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
 
-  networkIcons: {
-    flexDirection: "row",
-  },
-  networkIcon: {
-    fontSize: 16,
-    marginHorizontal: 5,
-  },
-  downloadIcon: {
-    width: 20,
-    height: 20,
-  },
   title: {
     fontFamily: "PlayfairDisplay_700Bold",
     fontSize: 24,
@@ -134,25 +113,6 @@ const styles = StyleSheet.create({
   },
   commentAuthor: {
     fontFamily: "PlayfairDisplay_700Bold",
-  },
-  bottomBar: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    borderTopWidth: 1,
-    borderTopColor: "#ccc",
-    paddingTop: 10,
-  },
-  bottomBarItem: {
-    alignItems: "center",
-  },
-  bottomBarIcon: {
-    width: 24,
-    height: 24,
-    marginBottom: 5,
-  },
-  bottomBarText: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 12,
   },
   verticalCenter: {
     justifyContent: "center",

@@ -11,6 +11,7 @@ export default function Feed() {
       <Text style={styles.text}>Feed</Text>
       <FeedbackView />
       <BookQuizView triggerSearch={()=>{}}/>
+      <BookQuizView triggerSearch={()=>{}}/>
     </Container>
   );
 }

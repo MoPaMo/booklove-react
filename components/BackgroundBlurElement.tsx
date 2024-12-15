@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     bottom: 28,
   },
   image: {
-    resizeMode: width > 700 ? "contain" : "cover",
+    resizeMode: "contain",//width > 700 ? "contain" : "cover",
   },
 });
 

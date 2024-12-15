@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     borderRadius: 5000,
     backgroundColor: "#fff",
   },
-
 });
 
 export default UserStack;

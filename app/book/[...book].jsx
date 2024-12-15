@@ -23,8 +23,10 @@ export default function Book() {
       <BookButtonStack></BookButtonStack>
       <View style={styles.divider} />
 
-      <Text style={styles.readBy}>Read by</Text>
-      <UserStack />
+      <View style={[styles.readByGroup]}>
+        <Text style={[styles.readBy]}>Read by</Text>
+        <UserStack />
+      </View>
 
       <View style={styles.comment}>
         <Ionicons name="person-circle-outline" size={40} color="black" />
@@ -97,6 +99,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
   },
+  readByGroup: {
+    marginBottom: 20,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
   profileIcons: {
     flexDirection: "row",
     marginBottom: 20,
@@ -141,5 +149,10 @@ const styles = StyleSheet.create({
   bottomBarText: {
     fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 12,
+  },
+  verticalCenter: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
   },
 });

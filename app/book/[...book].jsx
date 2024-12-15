@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
-import { useFonts } from "expo-font";
-import {
-  PlayfairDisplay_900Black,
-  PlayfairDisplay_400Regular,
-  PlayfairDisplay_700Bold,
-} from "@expo-google-fonts/dev";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "@/utils/colors";
 import HeaderTitle from "@/components/headerTitle";

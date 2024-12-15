@@ -7,6 +7,8 @@ import {
   PlayfairDisplay_700Bold,
 } from "@expo-google-fonts/dev";
 import { Ionicons } from "@expo/vector-icons";
+import colors from "@/utils/colors";
+import HeaderTitle from "@/components/headerTitle";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -17,7 +19,7 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <Text style={styles.title}>Pride and Prejudice</Text>
+    <HeaderTitle color={colors.blue}> Pride and Prejudice</HeaderTitle>
       <Text style={styles.author}>Jane Austen, 1813</Text>
 
       <Text style={styles.description}>

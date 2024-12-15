@@ -10,10 +10,10 @@ export default function HeaderTitle({ children, color }) {
     },
     header: {
       flexWrap: "wrap",
-      fontSize: 64,
+      fontSize: 48,
       color: color,
       textAlign: "left",
-      lineHeight: 64,
+      lineHeight: 48,
       fontFamily: "PlayfairDisplay_900Black",
       flex: 1,
     },

@@ -12,7 +12,7 @@ export default function Book() {
     <Container>
       <HeaderTitle color={colors.blue}>Pride and Prejudice</HeaderTitle>
       <Text style={styles.author}>Jane Austen, 1813</Text>
-
+      <View style={styles.divider} />
       <Text style={styles.description}>
         Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five
         daughters, but his property is entailed and can only be passed to a male
@@ -21,6 +21,7 @@ export default function Book() {
       </Text>
 
       <BookButtonStack></BookButtonStack>
+      <View style={styles.divider} />
 
       <Text style={styles.readBy}>Read by</Text>
       <View style={styles.profileIcons}>
@@ -51,6 +52,15 @@ const styles = StyleSheet.create({
     fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 16,
   },
+  divider: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc",
+    marginBottom: 10,
+    marginTop: 10,
+    width: "80%",
+    alignSelf: "center",
+  },
+
   networkIcons: {
     flexDirection: "row",
   },
@@ -76,7 +86,7 @@ const styles = StyleSheet.create({
     fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 16,
     lineHeight: 24,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   more: {
     color: "blue",

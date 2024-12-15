@@ -4,7 +4,7 @@ import { Appearance } from "react-native";
 import { useState, useEffect } from "react";
 
 const lightColors = {
-  primaryText: "#313330",
+  primaryText: "#000000",
   PillBG: "#000000",
   CleanBG: "#FFFAFA",
   DarkBG: "#000000",
@@ -26,7 +26,7 @@ const lightColors = {
 };
 
 const lightAccessibleColors = {
-  primaryText: "#313330",
+  primaryText: "#000000",
   PillBG: "#000000",
   CleanBG: "#FFFAFA",
   DarkBG: "#000000",
@@ -48,7 +48,7 @@ const lightAccessibleColors = {
 };
 
 const darkColors = {
-  primaryText: "#000000",
+  primaryText: "#ffffff",
   PillBG: "#313330",
   CleanBG: "#15151F",
   DarkBG: "#FFFFFF",

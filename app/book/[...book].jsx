@@ -16,16 +16,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topBar}>
-        <Text style={styles.time}>9:41</Text>
-        <View style={styles.networkIcons}>
-          <Ionicons name="wifi" size={16} color="black" />
-          <Ionicons name="cellular" size={16} color="black" />
-        </View>
-        <TouchableOpacity>
-          <Ionicons name="download-outline" size={20} color="black" />
-        </TouchableOpacity>
-      </View>
 
       <Text style={styles.title}>Pride and Prejudice</Text>
       <Text style={styles.author}>Jane Austen, 1813</Text>

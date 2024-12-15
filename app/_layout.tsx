@@ -7,7 +7,8 @@ import {
   PlayfairDisplay_400Regular,
   PlayfairDisplay_700Bold,
   Raleway_300Light,
-  Raleway_400Regular
+  Raleway_400Regular,
+  Raleway_700Bold,
 } from "@expo-google-fonts/dev";
 
 export default function RootLayout() {
@@ -16,7 +17,8 @@ export default function RootLayout() {
     PlayfairDisplay_700Bold,
     PlayfairDisplay_400Regular,
     Raleway_300Light,
-    Raleway_400Regular
+    Raleway_400Regular,
+    Raleway_700Bold,
   });
 
   if (!fontsLoaded) {

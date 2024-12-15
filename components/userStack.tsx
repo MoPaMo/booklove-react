@@ -7,7 +7,7 @@ const UserStack = () => {
       {[...Array(5)].map((_, index) => (
         <SimpleAvatar
           key={index}
-          size={50}
+          size={42}
           source={require("@/assets/images/memoji.png")}
           style={{ marginLeft: index === 0 ? 0 : -20 }}
         />

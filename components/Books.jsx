@@ -9,11 +9,8 @@ import {
   Linking,
   Platform,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import Shadow from "react-native-shadow-2";
 import ShimmerPlaceHolder from "react-native-shimmer-placeholder";
-import Clipboard from "@react-native-community/clipboard";
-import * as Font from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -44,6 +41,11 @@ const Book = ({ route }) => {
     const amazonSearchURL = `https://www.amazon.com/s?k=${bookItem.title}`;
     Linking.openURL(amazonSearchURL);
   };
+  setTimeout(() => setIsLoading(false), 2000);
+
+  const handleLikePress = () => {
+    setLiked(!liked);
+  }
 
   const handleShare = async () => {
     try {

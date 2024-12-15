@@ -9,7 +9,7 @@ import {
   Linking,
   Platform,
 } from "react-native";
-import Shadow from "react-native-shadow-2";
+import { Shadow } from "react-native-shadow-2";
 import ShimmerPlaceHolder from "react-native-shimmer-placeholder";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
@@ -45,7 +45,7 @@ const Book = ({ route }) => {
 
   const handleLikePress = () => {
     setLiked(!liked);
-  }
+  };
 
   const handleShare = async () => {
     try {

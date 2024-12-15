@@ -20,7 +20,14 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+
+      "proxy": {
+        "/api": {
+          "target": "https://api.getbooklove.app",
+          "pathRewrite": { "^/api": "" }
+        }
+      }
     },
     "plugins": [
       "expo-router",

@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
     padding: 20,
     width: "100%",
     maxWidth: 400,
+    overflow: 'hidden', 
   },
   content: {},
   title: {

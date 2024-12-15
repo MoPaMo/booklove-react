@@ -182,15 +182,15 @@ const Book = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.background, 
+    backgroundColor: colors.background,
   },
   content: {
     padding: 20,
   },
   loadingContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 20,
   },
   loadingTitle: {
@@ -205,57 +205,93 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   title: {
-    fontFamily: 'PlayfairDisplay_700Bold', 
+    fontFamily: "PlayfairDisplay_700Bold",
     fontSize: 40,
-    color: colors.cyan, 
+    color: colors.cyan,
     marginBottom: 10,
   },
   author: {
-    fontFamily: 'PlayfairDisplay_400Regular', 
+    fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 20,
-    color: colors.primaryText, 
+    color: colors.primaryText,
     marginBottom: 10,
   },
   divider: {
-    width: '80%',
+    width: "80%",
     height: 0.5,
-    backgroundColors: colors.divider, 
+    backgroundColors: colors.divider,
     marginVertical: 20,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
   description: {
-    fontFamily: 'PlayfairDisplay_400Regular', 
+    fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 16,
-    color: colors.primaryText, 
+    color: colors.primaryText,
     marginBottom: 20,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     marginBottom: 20,
   },
   button: {
-    backgroundColor: colors.buttonBackground, 
+    backgroundColor: colors.buttonBackground,
     borderRadius: 21,
     width: 161,
     height: 53,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonLiked: {
-    backgroundColor: colors.red, 
+    backgroundColor: colors.red,
   },
   buttonIcon: {
     width: 20,
     height: 20,
-    tintColor: colors.primaryText, 
+    tintColor: colors.primaryText,
   },
   buttonIconLiked: {
-    tintColor: colors.white, 
+    tintColor: colors.white,
   },
   genresContainer: {
     marginBottom: 20,
-  }
+  },
+  genrePill: {
+    backgroundColor: colors.genrePillBackground,
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    marginRight: 10,
+  },
+  gsenreText: {
+    fontFamily: "PlayfairDisplay_700Bold",
+    fontSize: 15,
+    color: colors.white,
+  },
+  isbn: {
+    fontFamily: "PlayfairDisplay_400Regular",
+    fontSize: 18,
+    color: colors.primaryText,
+    marginBottom: 20,
+  },
+  bottomButtons: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 20,
+  },
+  buttonText: {
+    fontFamily: "playfairDisplay_400Regular",
+    fontSize: 20,
+    color: colors.primaryText,
+  },
+  reportText: {
+    color: colors.red,
+  },
+  comingSoon: {
+    fontFamily: "PlayfairDisplay_400Regular",
+    fontSize: 18,
+    color: colors.primaryText,
+  },
 });
 
 export default Book;

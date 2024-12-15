@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
   divider: {
     width: "80%",
     height: 0.5,
-    backgroundColors: colors.divider,
+    backgroundColor: colors.divider,
     marginVertical: 20,
     alignSelf: "center",
   },
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginRight: 10,
   },
-  gsenreText: {
+  genreText: {
     fontFamily: "PlayfairDisplay_700Bold",
     fontSize: 15,
     color: colors.white,
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
-    fontFamily: "playfairDisplay_400Regular",
+    fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 20,
     color: colors.primaryText,
   },
@@ -291,6 +291,45 @@ const styles = StyleSheet.create({
     fontFamily: "PlayfairDisplay_400Regular",
     fontSize: 18,
     color: colors.primaryText,
+    textAlign: "center",
+    marginTop: 20,
+  },
+  infoIcon: {
+    width: 18,
+    height: 18,
+    tintColor: colors.primaryText,
+  },
+  sheet: {
+    backgroundColor: colors.sheetBackground,
+    padding: 20,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  sheetText: {
+    fontFamily: "PlayfairDisplay_400Regular",
+    fontSize: 16,
+    color: colors.primaryText,
+  },
+  sheetClose: {
+    fontFamily: "PlayfairDisplay_700Bold",
+    fontSize: 16,
+    color: colors.blue,
+    marginTop: 20,
+    textAlign: "center",
+  },
+  menuContainer: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+    flexDirection: "row",
+  },
+  menuIcon: {
+    width: 24,
+    height: 24,
+    tintColor: colors.primaryText,
+    marginLeft: 10,
   },
 });
 

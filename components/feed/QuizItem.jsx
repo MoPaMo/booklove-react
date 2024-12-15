@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { useFonts } from "expo-font";
-import BlurView from "react-native-blur";
+import { ActivityIndicator } from "react-native";
+import { BlurView } from "expo-blur";
 import axios from "axios";
 import colors from "@/utils/colors";
 
@@ -42,10 +42,6 @@ const BookQuizView = ({ triggerSearch }) => {
     setSelectedAnswer(index);
     setIsCorrect(index === correctAnswer);
   };
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
   return (
     <View style={styles.container}>

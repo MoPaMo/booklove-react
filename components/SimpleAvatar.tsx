@@ -1,6 +1,8 @@
 import { Image } from "react-native";
 
-const SimpleAvatar = ({ source, size = 50 }) => {
+import { ImageSourcePropType } from "react-native";
+
+const SimpleAvatar = ({ source, size = 50 }: { source: ImageSourcePropType; size?: number }) => {
   return (
     <Image
       source={source}

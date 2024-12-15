@@ -6,6 +6,7 @@ import {
   PlayfairDisplay_900Black,
   PlayfairDisplay_400Regular,
   PlayfairDisplay_700Bold,
+  Raleway_300Light,
 } from "@expo-google-fonts/dev";
 
 export default function RootLayout() {
@@ -13,6 +14,7 @@ export default function RootLayout() {
     PlayfairDisplay_900Black,
     PlayfairDisplay_700Bold,
     PlayfairDisplay_400Regular,
+    Raleway_300Light,
   });
 
   if (!fontsLoaded) {

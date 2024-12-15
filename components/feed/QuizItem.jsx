@@ -26,6 +26,10 @@ const BookQuizView = ({ triggerSearch }) => {
           seed: 123456,
           paginationIndex: 0,
         },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
       });
 
       const quizItem = response.data;
@@ -34,6 +38,7 @@ const BookQuizView = ({ triggerSearch }) => {
       setCorrectAnswer(quizItem.right_answer);
       setSubject(quizItem.subject);
     } catch (error) {
+      console.error("Error details:", error.response || error);
       setError("Failed to load quiz. Please try again.");
     }
   };

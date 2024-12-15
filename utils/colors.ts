@@ -1,8 +1,10 @@
 // color scheme / constants
 
 import { Appearance } from "react-native";
-import { useState, useEffect } from "react";
 
+const colorScheme = Appearance.getColorScheme();
+const isDark = colorScheme === "dark";
+const accessible = false;
 const lightColors = {
   primaryText: "#000000",
   PillBG: "#000000",
@@ -91,27 +93,7 @@ const darkAccessibleColors = {
   gray: "#8E8E93",
 };
 
-const useColorScheme = () => {
-  const [colorScheme, setColorScheme] = useState(Appearance.getColorScheme());
-
-  useEffect(() => {
-    const subscription = Appearance.addChangeListener(
-      ({ colorScheme: newColorScheme }) => {
-        setColorScheme(newColorScheme);
-      }
-    );
-
-    return () => subscription.remove();
-  }, []);
-
-  return colorScheme;
-};
-
-const isDark = useColorScheme() === "dark";
-const accessible = false;
-
 const colorsDefault = isDark ? darkColors : lightColors;
 const accessibleColors = isDark ? darkAccessibleColors : lightAccessibleColors;
 const colors = accessible ? accessibleColors : colorsDefault;
-
 export default colors;

@@ -4,12 +4,31 @@ import colors from "@/utils/colors";
 
 interface TextProps {
   design?: "serif" | "sansSerif" | "mono";
+  weight?:
+    | "light"
+    | "normal"
+    | "bold"
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900";
   style?: any;
   children: React.ReactNode;
 }
 
 const Text = (props: TextProps) => {
-  const { design = "sansSerif", style, children, ...rest } = props;
+  const {
+    design = "sansSerif",
+    weight = "normal",
+    style,
+    children,
+    ...rest
+  } = props;
 
   const designs = {
     serif: { fontFamily: "PlayfairDisplay_400Regular" },
@@ -18,7 +37,15 @@ const Text = (props: TextProps) => {
   };
 
   return (
-    <RNText style={[styles.text, design && designs[design], style]} {...rest}>
+    <RNText
+      style={[
+        styles.text,
+        design && designs[design],
+        { fontWeight: weight },
+        style,
+      ]}
+      {...rest}
+    >
       {children}
     </RNText>
   );

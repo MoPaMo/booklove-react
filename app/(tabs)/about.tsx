@@ -19,19 +19,4 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 16,
   },
-
-  topSection: {
-    paddingTop: width < 700 ? height * 0.2 : height * 0.1,
-    justifyContent: "flex-end",
-    paddingBottom: 10, // Add padding if needed
-  },
-  header: {
-    flexWrap: "wrap",
-    fontSize: 64,
-    color: colors.orange,
-    textAlign: "left",
-    lineHeight: 64,
-    fontFamily: "PlayfairDisplay_900Black",
-    flex: 1,
-  },
 });

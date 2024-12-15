@@ -46,11 +46,6 @@ export default function Book() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#fff",
-  },
   topBar: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -90,18 +85,12 @@ const styles = StyleSheet.create({
   },
   more: {
     color: "blue",
+    fontWeight: "800",
   },
   buttons: {
     flexDirection: "row",
     justifyContent: "space-around",
     marginBottom: 20,
-  },
-  button: {
-    padding: 10,
-  },
-  buttonIcon: {
-    width: 24,
-    height: 24,
   },
   readBy: {
     fontFamily: "PlayfairDisplay_400Regular",

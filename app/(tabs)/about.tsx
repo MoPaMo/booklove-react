@@ -3,13 +3,12 @@ import Container from "@/components/DefaultBGProvider";
 import colors from "@/utils/colors";
 import { Dimensions } from "react-native";
 import FeedbackComponent from "@/components/feed/FeedbackComponent";
+import HeaderTitle from "@/components/headerTitle";
 let { width, height } = Dimensions.get("window");
 export default function AboutScreen() {
   return (
     <Container>
-      <View style={styles.topSection}>
-        <Text style={[styles.header]}>Your Books</Text>
-      </View>
+      <HeaderTitle color={colors.orange}>Your Books</HeaderTitle>
       <FeedbackComponent />
     </Container>
   );

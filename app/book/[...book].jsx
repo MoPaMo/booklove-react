@@ -6,7 +6,7 @@ import HeaderTitle from "@/components/headerTitle";
 import BookButtonStack from "@/components/BookButtonStack";
 import Container from "@/components/DefaultBGProvider";
 import Text from "@/components/utils/text";
-
+import UserStack from "@/components/userStack";
 export default function Book() {
   return (
     <Container>
@@ -24,12 +24,7 @@ export default function Book() {
       <View style={styles.divider} />
 
       <Text style={styles.readBy}>Read by</Text>
-      <View style={styles.profileIcons}>
-        <Ionicons name="person-circle-outline" size={30} color="black" />
-        <Ionicons name="person-circle-outline" size={30} color="black" />
-        <Ionicons name="person-circle-outline" size={30} color="black" />
-        <Ionicons name="person-circle-outline" size={30} color="black" />
-      </View>
+      <UserStack />
 
       <View style={styles.comment}>
         <Ionicons name="person-circle-outline" size={40} color="black" />

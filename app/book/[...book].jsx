@@ -24,13 +24,15 @@ export default function Book() {
       <View style={styles.divider} />
 
       <View style={[styles.readByGroup]}>
-        <Text style={[styles.readBy]} design="sansSerif">Read by </Text>
+        <Text style={[styles.readBy]} design="sansSerif">
+          Read by{" "}
+        </Text>
         <UserStack />
       </View>
 
       <View style={styles.comment}>
         <Ionicons name="person-circle-outline" size={40} color="black" />
-        <Text style={styles.commentText} >
+        <Text style={styles.commentText}>
           <Text style={styles.commentAuthor}>Amazing! ~</Text> Jane
         </Text>
       </View>

@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   author: {
-    fontFamily: "PlayfairDisplay_400Regular",
+    fontFamily: "Raleway_300Light",
     fontSize: 16,
     marginBottom: 10,
   },

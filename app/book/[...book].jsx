@@ -9,15 +9,12 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import colors from "@/utils/colors";
 import HeaderTitle from "@/components/headerTitle";
+import BookButtonStack from "@/components/BookButtonStack";
+import Container from "@/components/DefaultBGProvider";
 
-export default function App() {
-  let [fontsLoaded] = useFonts({
-    PlayfairDisplay_400Regular,
-    PlayfairDisplay_700Bold,
-  });
-
+export default function Book() {
   return (
-    <View style={styles.container}>
+    <Container>
       <HeaderTitle color={colors.blue}>Pride and Prejudice</HeaderTitle>
       <Text style={styles.author}>Jane Austen, 1813</Text>
 
@@ -28,14 +25,7 @@ export default function App() {
         <Text style={styles.more}>more</Text>
       </Text>
 
-      <View style={styles.buttons}>
-        <TouchableOpacity style={styles.button}>
-          <Ionicons name="bookmark-outline" size={24} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Ionicons name="cart-outline" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
+      <BookButtonStack></BookButtonStack>
 
       <Text style={styles.readBy}>Read by</Text>
       <View style={styles.profileIcons}>
@@ -51,7 +41,7 @@ export default function App() {
           <Text style={styles.commentAuthor}>Amazing! ~</Text> Jane
         </Text>
       </View>
-    </View>
+    </Container>
   );
 }
 

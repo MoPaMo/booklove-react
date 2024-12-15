@@ -22,7 +22,7 @@ export default function TabLayout() {
 
           backgroundColor: "#25292e00",
           borderTopColor: "#25292e00",
-            borderTopWidth: 0,
+          borderTopWidth: 0,
         },
       }}
     >

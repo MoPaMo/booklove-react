@@ -6,7 +6,7 @@ export default function Container({ children, style = 0 }) {
     <>
       <BackgroundBlurElement />
       <SafeAreaView style={styles.container}>
-        <ScrollView>{children}</ScrollView>
+        <ScrollView >{children}</ScrollView>
       </SafeAreaView>
     </>
   );
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 16,
-    overflowX: "hidden",
+    overflowX: "none",
   },
 });
+

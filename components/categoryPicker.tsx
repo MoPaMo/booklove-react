@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const CategoryButtons = () => {
-  const [selectedCategories, setSelectedCategories] = useState([]);
+const CategoryButtons: React.FC = () => {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  const categories = [
+  const categories: string[] = [
     "Non-Fiction",
     "Romance",
     "Mystery",
@@ -23,7 +23,7 @@ const CategoryButtons = () => {
     "Philosophy",
   ];
 
-  const handleCategoryPress = (category) => {
+  const handleCategoryPress = (category: string) => {
     setSelectedCategories((prevSelected) => {
       if (prevSelected.includes(category)) {
         return prevSelected.filter((c) => c !== category);

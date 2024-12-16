@@ -54,7 +54,7 @@ const BookButtonStack = ({ bookItem }) => {
         onPressIn={() => setIsButtonPressed(true)}
         onPressOut={() => setIsButtonPressed(false)}
       >
-        <Ionicons name="cart" size={20} color="#000" />
+        <Ionicons name="cart-outline" size={20} color="#000" />
       </TouchableOpacity>
     </View>
   );

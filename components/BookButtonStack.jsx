@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  Linking,
-} from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { View, TouchableOpacity, StyleSheet, Linking } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const BookButtonStack = ({ bookItem }) => {
   const [liked, setLiked] = useState(false);
@@ -23,11 +17,11 @@ const BookButtonStack = ({ bookItem }) => {
     setIsButtonPressed(false);
 
     /*const userDefaults = await AsyncStorage.getItem('vendorURL');
-    if (userDefaults) {
-      Linking.openURL(`${userDefaults}${bookItem.title}`);
-    } else {
-      Linking.openURL(`https://www.amazon.com/s?k=${bookItem.title}`);
-    }*/
+        if (userDefaults) {
+            Linking.openURL(`${userDefaults}${bookItem.title}`);
+        } else {
+            Linking.openURL(`https://www.amazon.com/s?k=${bookItem.title}`);
+        }*/
   };
 
   const likeBook = (id, like) => {
@@ -46,7 +40,7 @@ const BookButtonStack = ({ bookItem }) => {
         ]}
         onPress={handleLikePress}
       >
-        <Feather name="bookmark" size={20} color={liked ? "#fff" : "#000"} />
+        <Ionicons name={liked ? "bookmark" : "bookmark-outline" } size={20} color={liked ? "#fff" : "#000"} />
       </TouchableOpacity>
       <TouchableOpacity
         style={[
@@ -60,7 +54,7 @@ const BookButtonStack = ({ bookItem }) => {
         onPressIn={() => setIsButtonPressed(true)}
         onPressOut={() => setIsButtonPressed(false)}
       >
-        <Feather name="shopping-cart" size={20} color="#000" />
+        <Ionicons name="cart" size={20} color="#000" />
       </TouchableOpacity>
     </View>
   );

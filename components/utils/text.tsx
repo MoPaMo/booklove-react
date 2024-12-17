@@ -48,22 +48,26 @@ const Text = (props: TextProps) => {
     },
   };
 
-  const fontWeightMapping: { [key in Exclude<TextProps['weight'], undefined>]: string } = {
-      "100": "light",
-      "200": "light",
-      "300": "light",
-      "400": "normal",
-      "500": "normal",
-      "600": "bold",
-      "700": "bold",
-      "800": "bold",
-      "900": "bold",
-      light: "light",
-      normal: "normal",
-      bold: "bold"
+  const fontWeightMapping: {
+    [key in Exclude<TextProps["weight"], undefined>]: string;
+  } = {
+    "100": "light",
+    "200": "light",
+    "300": "light",
+    "400": "normal",
+    "500": "normal",
+    "600": "bold",
+    "700": "bold",
+    "800": "bold",
+    "900": "bold",
+    light: "light",
+    normal: "normal",
+    bold: "bold",
   };
 
-  const fontWeight = fontWeightMapping[weight as keyof typeof fontWeightMapping] as keyof typeof designs.serif;
+  const fontWeight = fontWeightMapping[
+    weight as keyof typeof fontWeightMapping
+  ] as keyof typeof designs.serif;
 
   return (
     <RNText

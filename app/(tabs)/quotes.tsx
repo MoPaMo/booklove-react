@@ -1,21 +1,62 @@
-import { Text, View, StyleSheet } from "react-native";
-import Container from "@/components/DefaultBGProvider";
-export default function Quotes() {
+import React, { useState } from "react";
+import { StyleSheet, Text, View, FlatList } from "react-native";
+
+const fetchQuotes = async () => {
+  return [
+    {
+      id: "1",
+      quote:
+        "You must allow me to tell you how ardently I admire and love you.",
+      character: "Mr. Darcy",
+    },
+    {
+      id: "2",
+      quote: "There is no charm equal to tenderness of heart.",
+      character: "Jane Austen",
+    },
+  ];
+};
+
+const Quotes = () => {
+  const [quotes, setQuotes] = useState([]);
+
   return (
-    <Container>
-      <Text style={styles.text}>Quotes</Text>
-    </Container>
+    <View style={styles.container}>
+      <FlatList
+        data={quotes}
+        renderItem={({ item }) => (
+          <View style={styles.quoteContainer}>
+            <Text style={styles.quoteText}>{item.quote}</Text>
+            <Text style={styles.characterText}>~ {item.character}</Text>
+          </View>
+        )}
+        keyExtractor={(item) => item.id}
+      />
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#25292e',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    text: {
-      color: '#fff',
-    },
-  });
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#fff",
+  },
+  quoteContainer: {
+    marginBottom: 20,
+    padding: 15,
+    backgroundColor: "#f0f0f0",
+    borderRadius: 10,
+  },
+  quoteText: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  characterText: {
+    fontSize: 16,
+    textAlign: "right",
+    fontStyle: "italic",
+  },
+});
+
+export default Quotes;

@@ -8,9 +8,6 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import * as Font from "expo-font";
-import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
 import { Ionicons } from "@expo/vector-icons";
 
 const fetchQuotes = async () => {
@@ -66,16 +63,6 @@ const QuoteItem = ({ data }) => {
   const handleSaveBook = () => {
     setBookSaved(!bookSaved);
   };
-
-  let [fontsLoaded] = useFonts({
-    PlayfairDisplay: require("./assets/fonts/PlayfairDisplay-Regular.ttf"),
-    RobotoMono: require("./assets/fonts/RobotoMono-Regular.ttf"),
-    Raleway: require("./assets/fonts/Raleway-Regular.ttf"),
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
 
   return (
     <View style={styles.quoteContainer}>

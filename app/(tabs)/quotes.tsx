@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
 const fetchQuotes = async () => {
@@ -17,19 +17,32 @@ const fetchQuotes = async () => {
   ];
 };
 
+const QuoteItem = ({ data }) => {
+  return (
+    <View style={styles.quoteContainer}>
+      <Text style={styles.quoteText}>{data.quote}</Text>
+      <Text style={styles.characterText}>~ {data.character}</Text>
+    </View>
+  );
+};
+
 const Quotes = () => {
   const [quotes, setQuotes] = useState([]);
+
+  useEffect(() => {
+    const loadQuotes = async () => {
+      const fetchedQuotes = await fetchQuotes();
+      setQuotes(fetchedQuotes);
+    };
+
+    loadQuotes();
+  }, []);
 
   return (
     <View style={styles.container}>
       <FlatList
         data={quotes}
-        renderItem={({ item }) => (
-          <View style={styles.quoteContainer}>
-            <Text style={styles.quoteText}>{item.quote}</Text>
-            <Text style={styles.characterText}>~ {item.character}</Text>
-          </View>
-        )}
+        renderItem={({ item }) => <QuoteItem data={item} />}
         keyExtractor={(item) => item.id}
       />
     </View>

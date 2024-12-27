@@ -1,85 +1,88 @@
 // app/settings/book-vendor.jsx
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { Link } from "expo-router";
+import styled from "styled-components/native";
+import { Text, View, TouchableOpacity } from "react-native";
 
 export default function BookVendor() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Book Vendor</Text>
+    <Container>
+      <Title>Book Vendor</Title>
 
-      <View style={styles.grid}>
-        <TouchableOpacity style={styles.vendorButton}>
-          <Text style={styles.vendorText}>Amazon</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.selectedVendor}>
-          <Text style={styles.vendorText}>eBay</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.vendorButton}>
-          <Text style={styles.vendorText}>bookshop.org</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.vendorButton}>
-          <Text style={styles.vendorText}>Thrift Books</Text>
-        </TouchableOpacity>
-      </View>
+      <Grid>
+        <VendorButton>
+          <VendorText>Amazon</VendorText>
+        </VendorButton>
+        <SelectedVendor>
+          <VendorText>eBay</VendorText>
+        </SelectedVendor>
+        <VendorButton>
+          <VendorText>bookshop.org</VendorText>
+        </VendorButton>
+        <VendorButton>
+          <VendorText>Thrift Books</VendorText>
+        </VendorButton>
+      </Grid>
 
-      <Text style={styles.info}>We do not earn money from book sales.</Text>
+      <Info>We do not earn money from book sales.</Info>
       <TouchableOpacity>
-        <Text style={styles.suggest}>Suggest A Vendor</Text>
+        <Suggest>Suggest A Vendor</Suggest>
       </TouchableOpacity>
-    </View>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFF5F5",
-    padding: 24,
-  },
-  title: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 28,
-    marginBottom: 32,
-    textDecorationLine: "underline",
-  },
-  grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-  },
-  vendorButton: {
-    width: "45%",
-    padding: 20,
-    backgroundColor: "#FAFAFA",
-    borderRadius: 12,
-    marginBottom: 16,
-    alignItems: "center",
-  },
-  selectedVendor: {
-    width: "45%",
-    padding: 20,
-    backgroundColor: "#E0F0FF",
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: "#007AFF",
-    marginBottom: 16,
-    alignItems: "center",
-  },
-  vendorText: {
-    fontFamily: "Raleway_400Regular",
-    fontSize: 18,
-  },
-  info: {
-    fontFamily: "Raleway_400Regular",
-    fontSize: 14,
-    textAlign: "center",
-    marginTop: 24,
-  },
-  suggest: {
-    fontFamily: "Raleway_400Regular",
-    fontSize: 16,
-    color: "#007AFF",
-    textAlign: "center",
-    marginTop: 16,
-  },
-});
+const Container = styled(View)`
+  flex: 1;
+  background-color: ${(props) => props.theme.CleanBG};
+  padding: 24px;
+`;
+
+const Title = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  font-size: 28px;
+  margin-bottom: 32px;
+  text-decoration: underline;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const Grid = styled(View)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const VendorButton = styled(TouchableOpacity)`
+  width: 45%;
+  padding: 20px;
+  background-color: ${(props) => props.theme.lightGray};
+  border-radius: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+`;
+
+const SelectedVendor = styled(VendorButton)`
+  background-color: ${(props) => props.theme.cyan};
+  border-width: 2px;
+  border-color: ${(props) => props.theme.blue};
+`;
+
+const VendorText = styled(Text)`
+  font-family: "Raleway_400Regular";
+  font-size: 18px;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const Info = styled(Text)`
+  font-family: "Raleway_400Regular";
+  font-size: 14px;
+  text-align: center;
+  margin-top: 24px;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const Suggest = styled(Text)`
+  font-family: "Raleway_400Regular";
+  font-size: 16px;
+  color: ${(props) => props.theme.blue};
+  text-align: center;
+  margin-top: 16px;
+`;

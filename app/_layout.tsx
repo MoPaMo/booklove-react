@@ -10,6 +10,8 @@ import {
   Raleway_400Regular,
   Raleway_700Bold,
 } from "@expo-google-fonts/dev";
+import { ThemeProvider } from "@/context/ThemeContext";
+import ThemeWrapper from "@/context/ThemeWrapper";
 
 export default function RootLayout() {
   let [fontsLoaded] = useFonts({
@@ -31,8 +33,12 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <ThemeProvider>
+      <ThemeWrapper>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
+      </ThemeWrapper>
+    </ThemeProvider>
   );
 }

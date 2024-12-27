@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  StyleSheet,
   Text,
   View,
   FlatList,
@@ -9,6 +8,7 @@ import {
   Dimensions,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import styled from "styled-components/native";
 
 const fetchQuotes = async () => {
   return [
@@ -65,48 +65,46 @@ const QuoteItem = ({ data }) => {
   };
 
   return (
-    <View style={styles.quoteContainer}>
-      <View style={styles.card}>
+    <QuoteContainer width={Dimensions.get("window").width}>
+      <Card>
         <View style={styles.quoteContent}>
-          <Text style={styles.quoteText}>
+          <QuoteText>
             <Ionicons name="quote-opening" size={24} color="black" />
             {data.quote}
             <Ionicons name="quote-closing" size={24} color="black" />
-          </Text>
-          {data.character && (
-            <Text style={styles.characterText}>~ {data.character}</Text>
-          )}
-          <Text style={styles.bookTitle}>{data.book.title}</Text>
-          <Text style={styles.bookInfo}>
+          </QuoteText>
+          {data.character && <CharacterText>~ {data.character}</CharacterText>}
+          <BookTitle>{data.book.title}</BookTitle>
+          <BookInfo>
             {data.book.author}, {data.book.year}
-          </Text>
+          </BookInfo>
         </View>
 
-        <View style={styles.profileImageContainer}>
+        <ProfileImageContainer>
           <Image
             source={{ uri: data.user.profile_image_url }}
             style={styles.profileImage}
           />
-        </View>
-      </View>
+        </ProfileImageContainer>
+      </Card>
 
-      <View style={styles.actionsContainer}>
-        <TouchableOpacity onPress={handleLike} style={styles.actionButton}>
+      <ActionsContainer>
+        <ActionButton onPress={handleLike}>
           <Ionicons
             name={liked ? "heart" : "heart-outline"}
             size={32}
             color={liked ? "red" : "black"}
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleSaveBook} style={styles.actionButton}>
+        </ActionButton>
+        <ActionButton onPress={handleSaveBook}>
           <Ionicons
             name={bookSaved ? "bookmark" : "bookmark-outline"}
             size={32}
             color={bookSaved ? "orange" : "black"}
           />
-        </TouchableOpacity>
-      </View>
-    </View>
+        </ActionButton>
+      </ActionsContainer>
+    </QuoteContainer>
   );
 };
 
@@ -135,14 +133,14 @@ const Quotes = () => {
 
   if (isLoading) {
     return (
-      <View style={styles.loadingContainer}>
+      <LoadingContainer>
         <Text>Loading...</Text>
-      </View>
+      </LoadingContainer>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <Container>
       <FlatList
         ref={flatListRef}
         data={quotes}
@@ -155,88 +153,96 @@ const Quotes = () => {
         onViewableItemsChanged={onViewableItemsChanged}
         viewabilityConfig={viewabilityConfig}
       />
-    </View>
+    </Container>
   );
 };
 
+const Container = styled.View`
+  flex: 1;
+  background-color: ${(props) => props.theme.CleanBG};
+`;
+
+const LoadingContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+const QuoteContainer = styled.View`
+  flex: 1;
+  width: ${(props) => props.width}px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+`;
+
+const Card = styled.View`
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 30px;
+  shadow-color: #000;
+  shadow-offset: 0px 2px;
+  shadow-opacity: 0.25;
+  shadow-radius: 3.84px;
+  elevation: 5;
+  width: 80%;
+  height: 80%;
+`;
+
+const QuoteText = styled(Text)`
+  font-family: "PlayfairDisplay";
+  font-size: 30px;
+  margin-bottom: 20px;
+`;
+
+const CharacterText = styled(Text)`
+  font-family: "Raleway";
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+  align-self: flex-end;
+`;
+
+const BookTitle = styled(Text)`
+  font-family: "RobotoMono";
+  font-size: 24px;
+  font-weight: bold;
+  color: ${(props) => props.theme.red};
+  margin-bottom: 5px;
+`;
+
+const BookInfo = styled(Text)`
+  font-family: "RobotoMono";
+  font-size: 16px;
+`;
+
+const ProfileImageContainer = styled.View`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+`;
+
+const ActionsContainer = styled.View`
+  position: absolute;
+  bottom: 40px;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+`;
+
+const ActionButton = styled.TouchableOpacity`
+  padding: 10px;
+`;
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  quoteContainer: {
-    flex: 1,
-    width: Dimensions.get("window").width,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-  },
-  card: {
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
-    borderRadius: 20,
-    padding: 30,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    width: "80%",
-    height: "80%",
-  },
   quoteContent: {
     flex: 1,
     alignItems: "flex-start",
-  },
-  quoteText: {
-    fontFamily: "PlayfairDisplay",
-    fontSize: 30,
-    marginBottom: 20,
-  },
-  characterText: {
-    fontFamily: "Raleway",
-    fontSize: 18,
-    fontStyle: "italic",
-    marginBottom: 10,
-    alignSelf: "flex-end",
-  },
-  bookTitle: {
-    fontFamily: "RobotoMono",
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "red",
-    marginBottom: 5,
-  },
-  bookInfo: {
-    fontFamily: "RobotoMono",
-    fontSize: 16,
-  },
-  profileImageContainer: {
-    position: "absolute",
-    top: 20,
-    right: 20,
   },
   profileImage: {
     width: 60,
     height: 60,
     borderRadius: 30,
-  },
-  actionsContainer: {
-    position: "absolute",
-    bottom: 40,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: "80%",
-  },
-  actionButton: {
-    padding: 10,
   },
 });
 

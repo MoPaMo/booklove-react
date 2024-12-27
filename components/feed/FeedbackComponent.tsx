@@ -1,13 +1,64 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Linking,
-  Platform,
-} from "react-native";
+import { Text, View, TouchableOpacity, Linking, Platform } from "react-native";
+import styled from "styled-components/native";
 import colors from "@/utils/colors";
+
+const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+`;
+
+const FeedbackCard = styled.View`
+  background-color: ${(props) => props.theme.CleanBG};
+  border-radius: 23px;
+  border-width: 1px;
+  border-color: ${(props) => props.theme.indigo};
+  padding: 20px;
+  shadow-color: ${(props) => props.theme.indigo};
+  shadow-opacity: 0.5;
+  shadow-radius: 10px;
+  shadow-offset: 0px 0px;
+  elevation: 5;
+`;
+
+const Title = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  font-size: 24px;
+  color: ${(props) => props.theme.indigo};
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
+const Subtitle = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const ButtonGroup = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) =>
+    props.selected ? props.theme.red : props.theme.CleanBG}0f;
+  border-radius: 23px;
+  padding-vertical: 10px;
+  padding-horizontal: 20px;
+  border-width: 1px;
+  border-color: ${(props) =>
+    props.selected ? props.theme.red : props.theme.indigo};
+`;
+
+const ButtonText = styled(Text)`
+  color: ${(props) => props.theme.indigo};
+  font-size: 16px;
+  text-align: center;
+`;
 
 const FeedbackView = () => {
   const [likeState, setLikeState] = useState(0);
@@ -34,22 +85,22 @@ const FeedbackView = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.feedbackCard}>
-        <Text style={[styles.title]}>
+    <Container>
+      <FeedbackCard>
+        <Title>
           {likeState === 0
             ? "Spill the Beans!"
             : likeState === 1
             ? "Amazing!"
             : "Uh-oh!"}
-        </Text>
-        <Text style={[styles.subtitle]}>
+        </Title>
+        <Subtitle>
           {likeState === 0
             ? " How's Your booklove Experience so far?"
             : likeState === 1
             ? "Thank's for the love!"
             : "Want to tell us what's wrong?"}
-        </Text>
+        </Subtitle>
 
         {likeState === 1 && (
           <TouchableOpacity style={styles.button} onPress={handleReview}>
@@ -64,80 +115,18 @@ const FeedbackView = () => {
         )}
 
         {likeState === 0 && (
-          <View style={styles.buttonGroup}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => {
-                setLikeState(1);
-              }}
-            >
-              <Text style={styles.buttonText}>Love It!</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.button, { borderColor: colors.red }]}
-              onPress={() => setLikeState(2)}
-            >
-              <Text style={[styles.buttonText, { color: colors.red }]}>
-                Meh, It's Aight
-              </Text>
-            </TouchableOpacity>
-          </View>
+          <ButtonGroup>
+            <Button onPress={() => setLikeState(1)}>
+              <ButtonText>Love It!</ButtonText>
+            </Button>
+            <Button selected onPress={() => setLikeState(2)}>
+              <ButtonText>Meh, It's Aight</ButtonText>
+            </Button>
+          </ButtonGroup>
         )}
-      </View>
-    </View>
+      </FeedbackCard>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
-  },
-  feedbackCard: {
-    backgroundColor: colors.CleanBG,
-    borderRadius: 23,
-    borderCurve: "continuous",
-    padding: 20,
-    shadowColor: colors.indigo,
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 0 },
-    elevation: 5
-
-  },
-  title: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 24,
-    color: colors.indigo,
-    textAlign: "center",
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 16,
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  buttonGroup: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
-  button: {
-    backgroundColor: colors.CleanBG + "0f",
-    borderRadius: 23,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderWidth: 1,
-    borderColor: colors.indigo,
-  },
-  buttonText: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    color: colors.indigo,
-    fontSize: 16,
-    textAlign: "center",
-  },
-});
 
 export default FeedbackView;

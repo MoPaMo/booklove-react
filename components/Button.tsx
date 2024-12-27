@@ -1,39 +1,33 @@
 import React from "react";
-import {
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-  GestureResponderEvent,
-} from "react-native";
-import colors from "@/utils/colors";
+import styled from "styled-components/native";
+import { TouchableOpacity, Text } from "react-native";
 
 interface ButtonProps {
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: () => void;
   children: string;
 }
 
+const StyledButton = styled(TouchableOpacity)`
+  border-width: 2px;
+  border-color: ${(props) => props.theme.blue};
+  padding-vertical: 12px;
+  padding-horizontal: 32px;
+  border-radius: 8px;
+  align-items: center;
+`;
+
+const ButtonText = styled(Text)`
+  color: ${(props) => props.theme.CleanBG};
+  font-size: 16px;
+  font-weight: 600;
+`;
+
 const Button: React.FC<ButtonProps> = ({ onPress, children }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
+    <StyledButton onPress={onPress}>
+      <ButtonText>{children}</ButtonText>
+    </StyledButton>
   );
 };
-
-const styles = StyleSheet.create({
-  button: {
-    borderWidth: 2,
-    borderColor: colors.blue,
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-    alignItems: "center",
-  },
-  text: {
-    color: colors.blue,
-    fontSize: 16,
-    fontWeight: "600",
-  },
-});
 
 export default Button;

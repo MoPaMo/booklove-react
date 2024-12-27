@@ -1,5 +1,6 @@
 import React from "react";
-import { Text as RNText, StyleSheet } from "react-native";
+import styled from "styled-components/native";
+import { Text as RNText } from "react-native";
 import colors from "@/utils/colors";
 
 interface TextProps {
@@ -20,6 +21,11 @@ interface TextProps {
   style?: any;
   children: React.ReactNode;
 }
+
+const StyledText = styled(RNText)<TextProps>`
+  font-size: 16px;
+  color: ${(props) => props.theme.primaryText};
+`;
 
 const Text = (props: TextProps) => {
   const {
@@ -70,20 +76,13 @@ const Text = (props: TextProps) => {
   ] as keyof typeof designs.serif;
 
   return (
-    <RNText
-      style={[styles.text, design && designs[design][fontWeight], style]}
+    <StyledText
+      style={[design && designs[design][fontWeight], style]}
       {...rest}
     >
       {children}
-    </RNText>
+    </StyledText>
   );
 };
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 16,
-    color: colors.primaryText,
-  },
-});
 
 export default Text;

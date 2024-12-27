@@ -1,10 +1,103 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { ActivityIndicator } from "react-native";
 import { BlurView } from "expo-blur";
 import axios from "axios";
 import colors from "@/utils/colors";
-import {baseURL} from "@/utils/api";
+import { baseURL } from "@/utils/api";
+import styled from "styled-components/native";
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-horizontal: 20px;
+`;
+
+const BlurContainer = styled.View`
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  background-color: ${(props) => props.theme.CleanBG};
+`;
+
+const Title = styled(Text)`
+  font-size: 32px;
+  font-family: "PlayfairDisplay_700Bold";
+  color: ${(props) => props.theme.primaryText};
+  margin-bottom: 10px;
+`;
+
+const Divider = styled.View`
+  border-bottom-width: 1px;
+  border-bottom-color: ${(props) => props.theme.primaryText};
+  margin-vertical: 10px;
+`;
+
+const ErrorText = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  color: red;
+  text-align: center;
+`;
+
+const RetryButton = styled.TouchableOpacity`
+  margin-top: 10px;
+  align-self: center;
+`;
+
+const RetryButtonText = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const QuestionText = styled(Text)`
+  font-size: 20px;
+  font-family: "PlayfairDisplay_400Regular";
+  color: ${(props) => props.theme.primaryText};
+  margin-bottom: 20px;
+`;
+
+const AnswerButton = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: ${(props) => props.theme.lightGray}4f;
+  border-radius: 8px;
+  margin-bottom: 10px;
+`;
+
+const AnswerText = styled(Text)`
+  font-size: 16px;
+  font-family: "PlayfairDisplay_400Regular";
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const AnswerIcon = styled(Text)`
+  font-size: 20px;
+`;
+
+const FeedbackText = styled(Text)`
+  font-size: 18px;
+  font-family: "PlayfairDisplay_400Regular";
+  color: ${(props) => props.theme.primaryText};
+  margin-top: 10px;
+`;
+
+const SearchButton = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.blue};
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+`;
+
+const SearchButtonText = styled(Text)`
+  color: ${(props) => props.theme.CleanBG};
+  font-family: "PlayfairDisplay_400Regular";
+`;
+
 const BookQuizView = ({ triggerSearch }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -21,7 +114,7 @@ const BookQuizView = ({ triggerSearch }) => {
   const fetchQuiz = async () => {
     try {
       setError(null);
-      const response = await axios.get(baseURL+"/quiz", {
+      const response = await axios.get(baseURL + "/quiz", {
         params: {
           seed: 123456,
           paginationIndex: 0,
@@ -49,172 +142,70 @@ const BookQuizView = ({ triggerSearch }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <BlurView blurType="light" blurAmount={10} style={styles.blurContainer}>
-        <View style={styles.content}>
-          <Text style={styles.title}>Book Quiz</Text>
-          <View style={styles.divider} />
+    <Container>
+      <BlurContainer>
+        <Title>Book Quiz</Title>
+        <Divider />
 
-          {correctAnswer === null ? (
-            error ? (
-              <View>
-                <Text style={styles.errorText}>⚠️ {error}</Text>
-                <TouchableOpacity
-                  onPress={fetchQuiz}
-                  style={styles.retryButton}
-                >
-                  <Text style={styles.retryButtonText}>Retry</Text>
-                </TouchableOpacity>
-              </View>
-            ) : (
-              <View style={styles.loaderContainer}>
-                <ActivityIndicator size="large" color={colors.primary} />
-              </View>
-            )
-          ) : (
+        {correctAnswer === null ? (
+          error ? (
             <View>
-              <Text style={styles.questionText}>{question}</Text>
-
-              {selectedAnswer === null ? (
-                options.map((option, index) => (
-                  <TouchableOpacity
-                    key={index}
-                    onPress={() => handleAnswerSelect(index)}
-                    style={styles.answerButton}
-                  >
-                    <Text style={styles.answerText}>{option}</Text>
-                    {selectedAnswer === index && (
-                      <Text style={styles.answerIcon}>
-                        {isCorrect ? "✅" : "❌"}
-                      </Text>
-                    )}
-                  </TouchableOpacity>
-                ))
-              ) : (
-                <View>
-                  <TouchableOpacity style={styles.answerButton}>
-                    <Text style={styles.answerText}>
-                      {options[correctAnswer]}
-                    </Text>
-                    <Text style={styles.answerIcon}>✅</Text>
-                  </TouchableOpacity>
-
-                  {!isCorrect && (
-                    <TouchableOpacity style={styles.answerButton}>
-                      <Text style={styles.answerText}>
-                        {options[selectedAnswer]}
-                      </Text>
-                      <Text style={styles.answerIcon}>❌</Text>
-                    </TouchableOpacity>
-                  )}
-
-                  <Text style={styles.feedbackText}>
-                    {isCorrect ? "Well done!" : "You'll get it next time!"}
-                  </Text>
-                </View>
-              )}
+              <ErrorText>⚠️ {error}</ErrorText>
+              <RetryButton onPress={fetchQuiz}>
+                <RetryButtonText>Retry</RetryButtonText>
+              </RetryButton>
             </View>
-          )}
-        </View>
-      </BlurView>
+          ) : (
+            <View style={styles.loaderContainer}>
+              <ActivityIndicator size="large" color={colors.primary} />
+            </View>
+          )
+        ) : (
+          <View>
+            <QuestionText>{question}</QuestionText>
+
+            {selectedAnswer === null ? (
+              options.map((option, index) => (
+                <AnswerButton
+                  key={index}
+                  onPress={() => handleAnswerSelect(index)}
+                >
+                  <AnswerText>{option}</AnswerText>
+                  {selectedAnswer === index && (
+                    <AnswerIcon>{isCorrect ? "✅" : "❌"}</AnswerIcon>
+                  )}
+                </AnswerButton>
+              ))
+            ) : (
+              <View>
+                <AnswerButton>
+                  <AnswerText>{options[correctAnswer]}</AnswerText>
+                  <AnswerIcon>✅</AnswerIcon>
+                </AnswerButton>
+
+                {!isCorrect && (
+                  <AnswerButton>
+                    <AnswerText>{options[selectedAnswer]}</AnswerText>
+                    <AnswerIcon>❌</AnswerIcon>
+                  </AnswerButton>
+                )}
+
+                <FeedbackText>
+                  {isCorrect ? "Well done!" : "You'll get it next time!"}
+                </FeedbackText>
+              </View>
+            )}
+          </View>
+        )}
+      </BlurContainer>
 
       {selectedAnswer !== null && (
-        <TouchableOpacity
-          onPress={() => triggerSearch(subject)}
-          style={styles.searchButton}
-        >
-          <Text style={styles.searchButtonText}>
-            <Text style={styles.searchText}>Search</Text>
-          </Text>
-        </TouchableOpacity>
+        <SearchButton onPress={() => triggerSearch(subject)}>
+          <SearchButtonText>Search</SearchButtonText>
+        </SearchButton>
       )}
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
-  },
-  blurContainer: {
-    borderRadius: 16,
-    padding: 20,
-    width: "100%",
-    maxWidth: 400,
-    overflow: 'hidden', 
-  },
-  content: {},
-  title: {
-    fontSize: 32,
-    fontFamily: "PlayfairDisplay_700Bold",
-    color: colors.primary,
-    marginBottom: 10,
-  },
-  divider: {
-    borderBottomWidth: 1,
-    borderBottomColor: colors.primary,
-    marginVertical: 10,
-  },
-  loaderContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    height: 100,
-  },
-  errorText: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    color: "red",
-    textAlign: "center",
-  },
-  retryButton: {
-    marginTop: 10,
-    alignSelf: "center",
-  },
-  retryButtonText: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    color: colors.primary,
-  },
-  questionText: {
-    fontSize: 20,
-    fontFamily: "PlayfairDisplay_400Regular",
-    color: colors.primary,
-    marginBottom: 20,
-  },
-  answerButton: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 15,
-    backgroundColor: colors.lightGray+'4f',
-    borderRadius: 8,
-    marginBottom: 10,
-  },
-  answerText: {
-    fontSize: 16,
-    fontFamily: "PlayfairDisplay_400Regular",
-    color: colors.primary,
-  },
-  answerIcon: {
-    fontSize: 20,
-  },
-  feedbackText: {
-    fontSize: 18,
-    fontFamily: "PlayfairDisplay_400Regular",
-    color: colors.primary,
-    marginTop: 10,
-  },
-  searchButton: {
-    backgroundColor: "blue",
-    padding: 10,
-    borderRadius: 20,
-    marginTop: 20,
-  },
-  searchButtonText: {
-    color: "white",
-    fontFamily: "PlayfairDisplay_400Regular",
-  },
-});
 
 export default BookQuizView;

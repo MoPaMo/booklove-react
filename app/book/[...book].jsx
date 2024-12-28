@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "@/utils/colors";
 import HeaderTitle from "@/components/headerTitle";
@@ -6,14 +6,12 @@ import BookButtonStack from "@/components/BookButtonStack";
 import Container from "@/components/DefaultBGProvider";
 import Text from "@/components/utils/text";
 import UserStack from "@/components/userStack";
-import styled, {useTheme} from "styled-components/native";
-import { use } from "react";
+import styled, { useTheme } from "styled-components/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const StyledContainer = styled(Container)`
   flex: 1;
 `;
-
-
 
 const AuthorText = styled(Text)`
   font-family: "Raleway_300Light";
@@ -73,7 +71,18 @@ const CommentAuthor = styled(Text)`
 `;
 
 const Book = () => {
-    const color = useTheme();
+  const color = useTheme();
+  const navigation = useNavigation();
+  const route = useRoute();
+  const { book } = route.params || {};
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: book?.title || "Book Details",
+      headerBackTitle: "Back",
+    });
+  }, [navigation, book]);
+
   return (
     <StyledContainer>
       <HeaderTitle color={color.cyan}>Pride and Prejudice</HeaderTitle>
@@ -94,7 +103,7 @@ const Book = () => {
         <UserStack />
       </ReadByGroup>
 
-      <Text design="sansSerif" weight="bold" >
+      <Text design="sansSerif" weight="bold">
         Comments
       </Text>
       <Comment>

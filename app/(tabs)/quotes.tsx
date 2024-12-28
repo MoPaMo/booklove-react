@@ -83,9 +83,9 @@ const QuoteItem = ({ data }) => {
       <Card>
         <View style={styles.quoteContent}>
           <QuoteText>
-            <QuoteOpen width={24} height={24} fill={theme.primaryText} />{" "}
+            <QuoteOpen fill={theme.primaryText} height={24} width={24} />{" "}
             {data.quote}{" "}
-            <QuoteClose width={24} height={24} fill={theme.primaryText} />
+            <QuoteClose fill={theme.primaryText} height={24} width={24} />
           </QuoteText>
           <View style={{ flex: 1 }} />
           {data.character && <CharacterText>~ {data.character}</CharacterText>}

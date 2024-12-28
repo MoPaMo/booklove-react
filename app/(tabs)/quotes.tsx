@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 const fetchQuotes = async () => {
   return [
     {
@@ -56,7 +56,7 @@ const fetchQuotes = async () => {
 const QuoteItem = ({ data }) => {
   const [liked, setLiked] = useState(data.liked);
   const [bookSaved, setBookSaved] = useState(data.bookSaved);
-
+  const theme = useTheme();
   const handleLike = () => {
     setLiked(!liked);
   };
@@ -73,9 +73,13 @@ const QuoteItem = ({ data }) => {
       <Card>
         <View style={styles.quoteContent}>
           <QuoteText>
-            <Fontisto name="quote-a-right" size={24} color="black" />{" "}
+            <Fontisto
+              name="quote-a-right"
+              size={24}
+              color={theme.primaryText}
+            />{" "}
             {data.quote}{" "}
-            <Fontisto name="quote-a-left" size={24} color="black" />
+            <Fontisto name="quote-a-left" size={24} color={theme.primaryText} />
           </QuoteText>
           <View style={{ flex: 1 }} />
           {data.character && <CharacterText>~ {data.character}</CharacterText>}

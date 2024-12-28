@@ -8,9 +8,17 @@ import {
   Dimensions,
   StyleSheet,
 } from "react-native";
+import Container from "@/components/DefaultBGProvider";
 import { Ionicons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 import styled, { useTheme } from "styled-components/native";
+import BackgroundBlurElement from "@/components/BackgroundBlurElement";
+
+const Background = styled(BackgroundBlurElement)`
+  flex: 1;
+  overflow: hidden;
+`;
+
 const fetchQuotes = async () => {
   return [
     {
@@ -149,26 +157,28 @@ const Quotes = () => {
   }
 
   return (
-    <Container>
-      <FlatList
-        ref={flatListRef}
-        data={quotes}
-        renderItem={({ item }) => (
-          <QuoteItem data={item} style={styles.large} />
-        )}
-        keyExtractor={(item) => item.id}
-        horizontal={false}
-        pagingEnabled
-        snapToAlignment="center"
-        showsHorizontalScrollIndicator={false}
-        onViewableItemsChanged={onViewableItemsChanged}
-        viewabilityConfig={viewabilityConfig}
-      />
-    </Container>
+    <>
+      <Background />
+      <SafeArea>
+        <FlatList
+          ref={flatListRef}
+          data={quotes}
+          renderItem={({ item }) => (
+            <QuoteItem data={item} style={styles.large} />
+          )}
+          keyExtractor={(item) => item.id}
+          horizontal={false}
+          pagingEnabled
+          snapToAlignment="center"
+          showsHorizontalScrollIndicator={false}
+          onViewableItemsChanged={onViewableItemsChanged}
+          viewabilityConfig={viewabilityConfig}
+        />
+      </SafeArea>
+    </>
   );
 };
-
-const Container = styled.View`
+const Container2 = styled(Container)`
   flex: 1;
   background-color: ${(props) => props.theme.CleanBG};
 `;
@@ -186,6 +196,10 @@ const QuoteContainer = styled.View`
   justify-content: center;
   align-items: center;
   padding: 20px;
+`;
+
+const SafeArea = styled.SafeAreaView`
+  flex: 1;
 `;
 
 const Card = styled.View`

@@ -8,7 +8,7 @@ import Text from "@/components/utils/text";
 import UserStack from "@/components/userStack";
 import styled, { useTheme } from "styled-components/native";
 import { useNavigation, useRoute } from "@react-navigation/native";
-
+import { TouchableOpacity } from "react-native";
 const StyledContainer = styled(Container)`
   flex: 1;
 `;
@@ -92,7 +92,9 @@ const Book = () => {
         Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five
         daughters, but his property is entailed and can only be passed to a male
         heir. His wife also lacks an inheritance, so his family faces...{" "}
-        <MoreText>more</MoreText>
+        <MoreText onPress={() => alert("Read more")}>
+          more
+        </MoreText>
       </Description>
 
       <BookButtonStack />
@@ -112,6 +114,7 @@ const Book = () => {
           <CommentAuthor>Amazing!</CommentAuthor> Jane
         </CommentText>
       </Comment>
+     
     </StyledContainer>
   );
 };

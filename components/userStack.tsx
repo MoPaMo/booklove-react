@@ -1,26 +1,27 @@
-import React from "react";
-import { View, Image, StyleSheet } from "react-native";
-import SimpleAvatar from "@/components/SimpleAvatar";
+import styled from "styled-components/native";
+
+const Container = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Avatar = styled(SimpleAvatar)`
+  margin-left: ${(props) => (props.first ? "0px" : "-20px")};
+`;
+
 const UserStack = () => {
   return (
-    <View style={styles.container}>
+    <Container>
       {[...Array(5)].map((_, index) => (
-        <SimpleAvatar
+        <Avatar
           key={index}
           size={42}
           source={require("@/assets/images/memoji.png")}
-          style={{ marginLeft: index === 0 ? 0 : -20 }}
+          first={index === 0}
         />
       ))}
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-});
 
 export default UserStack;

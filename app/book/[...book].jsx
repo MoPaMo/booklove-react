@@ -6,15 +6,14 @@ import BookButtonStack from "@/components/BookButtonStack";
 import Container from "@/components/DefaultBGProvider";
 import Text from "@/components/utils/text";
 import UserStack from "@/components/userStack";
-import styled from "styled-components/native";
+import styled, {useTheme} from "styled-components/native";
+import { use } from "react";
 
 const StyledContainer = styled(Container)`
   flex: 1;
 `;
 
-const Header = styled(HeaderTitle)`
-  color: ${(props) => props.theme.cyan};
-`;
+
 
 const AuthorText = styled(Text)`
   font-family: "Raleway_300Light";
@@ -74,9 +73,10 @@ const CommentAuthor = styled(Text)`
 `;
 
 const Book = () => {
+    const color = useTheme();
   return (
     <StyledContainer>
-      <Header>Pride and Prejudice</Header>
+      <HeaderTitle color={color.cyan}>Pride and Prejudice</HeaderTitle>
       <AuthorText>Jane Austen, 1813</AuthorText>
       <Divider />
       <Description>

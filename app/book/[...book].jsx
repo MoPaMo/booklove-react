@@ -55,7 +55,6 @@ const Description = styled(Text)`
   border-radius: 10px;
   overflow: hidden;
   transition: max-height 0.3s ease;
-
 `;
 
 const MoreText = styled(Text)`
@@ -118,7 +117,7 @@ const Book = () => {
       <AuthorText>Jane Austen, 1813</AuthorText>
       <Divider />
       <Description isExpanded={isExpanded} onPress={toggleExpansion}>
-        {isExpanded ? text+" " : `${text.substring(0, 100)}... `}
+        {isExpanded ? text + " " : `${text.substring(0, 100)}... `}
         <MoreText>{isExpanded ? " less" : " more"}</MoreText>
       </Description>
 

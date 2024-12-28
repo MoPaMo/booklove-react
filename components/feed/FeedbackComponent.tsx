@@ -23,7 +23,6 @@ const FeedbackCard = styled.View`
   elevation: 5;
 `;
 
-
 const Title = styled(Text)`
   font-family: "PlayfairDisplay_400Regular";
   font-size: 24px;
@@ -37,7 +36,7 @@ const Subtitle = styled(Text)`
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
-    color: ${(props) => props.theme.primaryText};
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const ButtonGroup = styled.View`
@@ -84,7 +83,7 @@ const FeedbackView = () => {
     Linking.openURL(mailtoUrl);
   };
 
-  return ( 
+  return (
     <Container>
       <FeedbackCard>
         <Title>

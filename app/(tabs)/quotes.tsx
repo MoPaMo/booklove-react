@@ -66,7 +66,7 @@ const QuoteItem = ({ data }) => {
   };
 
   return (
-    <QuoteContainer width={Dimensions.get("window").width}>
+    <QuoteContainer data-width={Dimensions.get("window").width} data-height={Dimensions.get("window").height}>
       <Card>
         <View style={styles.quoteContent}>
           <QuoteText>
@@ -172,8 +172,8 @@ const LoadingContainer = styled.View`
 
 const QuoteContainer = styled.View`
   flex: 1;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
+  width: ${(props) => props["data-width"]}px;
+  height: ${(props) => props["data-height"] *0.9 }px;
   justify-content: center;
   align-items: center;
   padding: 20px;

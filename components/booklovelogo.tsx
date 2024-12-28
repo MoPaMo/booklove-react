@@ -1,17 +1,17 @@
-import React from "react";
-import { View, Text } from "react-native";
+import styled from "styled-components/native";
+
+const LogoContainer = styled.View`
+  font-family: "PlayfairDisplay_900Black";
+  color: ${(props) => props.theme.primaryText};
+  text-align: center;
+  font-size: 5vw;
+`;
+
 const BookLoveLogo: React.FC = () => {
   return (
-    <View
-      style={{
-        fontFamily: "PlayfairDisplay_900Black",
-        color: "#000",
-        textAlign: "center",
-        fontSize: "clamp(24px, 5vw, 48px)",
-      }}
-    >
+    <LogoContainer>
       <Text>booklove </Text>
-    </View>
+    </LogoContainer>
   );
 };
 

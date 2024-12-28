@@ -231,8 +231,8 @@ const ProfileImageContainer = styled.View`
 `;
 
 const ActionsContainer = styled.View`
-flex: 1;  
-flex-direction: column;
+  flex: 1;
+  flex-direction: column;
   justify-content: space-around;
   width: 80%;
 `;
@@ -247,12 +247,10 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   profileImage: {
+    position: "absolute",
     width: 60,
     height: 60,
     borderRadius: 30,
-  },
-  large: {
-    height: 500,
   },
 });
 

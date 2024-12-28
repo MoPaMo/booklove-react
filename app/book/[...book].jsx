@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "@/utils/colors";
 import HeaderTitle from "@/components/headerTitle";
@@ -7,116 +6,105 @@ import BookButtonStack from "@/components/BookButtonStack";
 import Container from "@/components/DefaultBGProvider";
 import Text from "@/components/utils/text";
 import UserStack from "@/components/userStack";
-export default function Book() {
+import styled from "styled-components/native";
+
+const StyledContainer = styled(Container)`
+  flex: 1;
+`;
+
+const Header = styled(HeaderTitle)`
+  color: ${(props) => props.theme.cyan};
+`;
+
+const AuthorText = styled(Text)`
+  font-family: "Raleway_300Light";
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const Divider = styled.View`
+  border-bottom-width: 1px;
+  border-bottom-color: ${(props) => props.theme.gray};
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 80%;
+  align-self: center;
+`;
+
+const Description = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const MoreText = styled(Text)`
+  color: ${(props) => props.theme.blue};
+  font-weight: 800;
+`;
+
+const ReadByGroup = styled.View`
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const ReadByText = styled(Text)`
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const Comment = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
+const CommentText = styled(Text)`
+  font-family: "PlayfairDisplay_400Regular";
+  font-size: 16px;
+  color: ${(props) => props.theme.primaryText};
+`;
+
+const CommentAuthor = styled(Text)`
+  font-family: "PlayfairDisplay_700Bold";
+`;
+
+const Book = () => {
   return (
-    <Container>
-      <HeaderTitle color={colors.cyan}>Pride and Prejudice</HeaderTitle>
-      <Text style={styles.author}>Jane Austen, 1813</Text>
-      <View style={styles.divider} />
-      <Text style={styles.description}>
+    <StyledContainer>
+      <Header>Pride and Prejudice</Header>
+      <AuthorText>Jane Austen, 1813</AuthorText>
+      <Divider />
+      <Description>
         Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five
         daughters, but his property is entailed and can only be passed to a male
         heir. His wife also lacks an inheritance, so his family faces...{" "}
-        <Text style={styles.more}>more</Text>
-      </Text>
+        <MoreText>more</MoreText>
+      </Description>
 
-      <BookButtonStack></BookButtonStack>
-      <View style={styles.divider} />
+      <BookButtonStack />
+      <Divider />
 
-      <View style={[styles.readByGroup]}>
-        <Text style={[styles.readBy]} design="sansSerif">
-          Read by{" "}
-        </Text>
+      <ReadByGroup>
+        <ReadByText>Read by </ReadByText>
         <UserStack />
-      </View>
+      </ReadByGroup>
 
       <Text design="sansSerif" weight="bold" style={styles.readBy}>
         Comments
       </Text>
-      <View style={styles.comment}>
+      <Comment>
         <Ionicons name="person-circle-outline" size={40} color="black" />
-        <Text style={styles.commentText}>
-          <Text style={styles.commentAuthor}>Amazing! ~</Text> Jane
-        </Text>
-      </View>
-    </Container>
+        <CommentText>
+          <CommentAuthor>Amazing!</CommentAuthor> Jane
+        </CommentText>
+      </Comment>
+    </StyledContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  divider: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
-    marginBottom: 10,
-    marginTop: 10,
-    width: "80%",
-    alignSelf: "center",
-  },
-
-  title: {
-    fontFamily: "PlayfairDisplay_700Bold",
-    fontSize: 24,
-    marginBottom: 5,
-  },
-  author: {
-    fontFamily: "Raleway_300Light",
-    fontSize: 16,
-    marginBottom: 10,
-  },
-  description: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 16,
-    lineHeight: 24,
-    marginBottom: 10,
-  },
-  more: {
-    color: "blue",
-    fontWeight: "800",
-  },
-  buttons: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    marginBottom: 20,
-  },
-  readBy: {
-    fontSize: 16,
-    marginBottom: 10,
-  },
-  readByGroup: {
-    marginBottom: 20,
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  profileIcons: {
-    flexDirection: "row",
-    marginBottom: 20,
-  },
-  profileIcon: {
-    width: 30,
-    height: 30,
-    marginHorizontal: 5,
-  },
-  comment: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  commentProfileIcon: {
-    width: 40,
-    height: 40,
-    marginRight: 10,
-  },
-  commentText: {
-    fontFamily: "PlayfairDisplay_400Regular",
-    fontSize: 16,
-  },
-  commentAuthor: {
-    fontFamily: "PlayfairDisplay_700Bold",
-  },
-  verticalCenter: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-  },
-});
+export default Book;

@@ -66,7 +66,10 @@ const QuoteItem = ({ data }) => {
   };
 
   return (
-    <QuoteContainer data-width={Dimensions.get("window").width} data-height={Dimensions.get("window").height}>
+    <QuoteContainer
+      data-width={Dimensions.get("window").width}
+      data-height={Dimensions.get("window").height}
+    >
       <Card>
         <View style={styles.quoteContent}>
           <QuoteText>
@@ -146,7 +149,9 @@ const Quotes = () => {
       <FlatList
         ref={flatListRef}
         data={quotes}
-        renderItem={({ item }) => <QuoteItem data={item} style={styles.large} />}
+        renderItem={({ item }) => (
+          <QuoteItem data={item} style={styles.large} />
+        )}
         keyExtractor={(item) => item.id}
         horizontal={false}
         pagingEnabled
@@ -172,8 +177,8 @@ const LoadingContainer = styled.View`
 
 const QuoteContainer = styled.View`
   flex: 1;
-  width: ${(props) => props["data-width"]}px;
-  height: ${(props) => props["data-height"] *0.9 }px;
+  height: ${(props) => props["data-height"] * 0.8}px;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -189,7 +194,7 @@ const Card = styled.View`
   shadow-radius: 3.84px;
   elevation: 5;
   width: 80%;
-  height: 80%;
+  margin-right: 20px;
 `;
 
 const QuoteText = styled(Text)`
@@ -226,9 +231,8 @@ const ProfileImageContainer = styled.View`
 `;
 
 const ActionsContainer = styled.View`
-  position: absolute;
-  bottom: 40px;
-  flex-direction: row;
+flex: 1;  
+flex-direction: column;
   justify-content: space-around;
   width: 80%;
 `;
@@ -247,9 +251,9 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
   },
-  large:{
-    height: 500
-  }
+  large: {
+    height: 500,
+  },
 });
 
 export default Quotes;

@@ -146,9 +146,9 @@ const Quotes = () => {
       <FlatList
         ref={flatListRef}
         data={quotes}
-        renderItem={({ item }) => <QuoteItem data={item} />}
+        renderItem={({ item }) => <QuoteItem data={item} style={styles.large} />}
         keyExtractor={(item) => item.id}
-        horizontal
+        horizontal={false}
         pagingEnabled
         snapToAlignment="center"
         showsHorizontalScrollIndicator={false}
@@ -173,6 +173,7 @@ const LoadingContainer = styled.View`
 const QuoteContainer = styled.View`
   flex: 1;
   width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -246,6 +247,9 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
   },
+  large:{
+    height: 500
+  }
 });
 
 export default Quotes;

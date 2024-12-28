@@ -53,8 +53,8 @@ const BookButtonStack = ({ bookItem }) => {
     <Container>
       <Button
         style={{
-          backgroundColor: liked ? props.theme.red : props.theme.white,
-          shadow-opacity: liked ? 0 : 0.2,
+          backgroundColor: (liked ? props.theme.red : props.theme.white),
+          shadowOpacity: (liked ? 0 : 0.2),
         }}
         onPress={handleLikePress}
       >
@@ -66,7 +66,7 @@ const BookButtonStack = ({ bookItem }) => {
       </Button>
       <Button
         style={{
-          shadow-opacity: isButtonPressed ? 0 : 0.2,
+          shadowOpacity: isButtonPressed ? 0 : 0.2,
           transform: [{ scale: isButtonPressed ? 0.9 : 1 }],
         }}
         onPress={handleCartPress}

@@ -23,6 +23,7 @@ const FeedbackCard = styled.View`
   elevation: 5;
 `;
 
+
 const Title = styled(Text)`
   font-family: "PlayfairDisplay_400Regular";
   font-size: 24px;

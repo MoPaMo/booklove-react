@@ -212,7 +212,7 @@ const CharacterText = styled(Text)`
 `;
 
 const BookTitle = styled(Text)`
-  font-family: "RobotoMono";
+  font-family: "PlayfairDisplay_400Regular";
   font-size: 24px;
   font-weight: bold;
   color: ${(props) => props.theme.red};
@@ -220,7 +220,7 @@ const BookTitle = styled(Text)`
 `;
 
 const BookInfo = styled(Text)`
-  font-family: "RobotoMono";
+  font-family: "Raleway_400Regular";
   font-size: 16px;
 `;
 

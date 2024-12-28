@@ -22,11 +22,12 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png",
-
       "proxy": {
         "/api": {
           "target": "https://api.getbooklove.app",
-          "pathRewrite": { "^/api": "" }
+          "pathRewrite": {
+            "^/api": ""
+          }
         }
       }
     },
@@ -45,6 +46,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "71a75662-6b59-4f27-be9b-93b2a4441b69"
+      }
     }
   }
 }

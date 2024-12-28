@@ -13,6 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 import styled, { useTheme } from "styled-components/native";
 import BackgroundBlurElement from "@/components/BackgroundBlurElement";
+import SimpleAvatar from "@/components/SimpleAvatar";
 
 const Background = styled(BackgroundBlurElement)`
   flex: 1;
@@ -98,10 +99,11 @@ const QuoteItem = ({ data }) => {
         </View>
 
         <ProfileImageContainer>
-          <Image
+          <SimpleAvatar
+            size={60}
             source={{ uri: data.user.profile_image_url }}
             style={styles.profileImage}
-          />
+            />
         </ProfileImageContainer>
       </Card>
 

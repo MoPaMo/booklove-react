@@ -1,26 +1,27 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Dimensions } from "react-native";
+import styled from "styled-components/native";
+
+const TopSection = styled.View`
+  padding-top: ${(props) =>
+    props.width < 700 ? props.height * 2 : props.height}px;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+`;
+
+const HeaderText = styled(Text)`
+  flex-wrap: wrap;
+  font-size: 48px;
+  color: ${(props) => props.color};
+  text-align: left;
+  line-height: 48px;
+  font-family: "PlayfairDisplay_900Black";
+  flex: 1;
+`;
+
 export default function HeaderTitle({ children, color, height: h = 0.1 }) {
   let { width, height } = Dimensions.get("window");
-  const styles = StyleSheet.create({
-    topSection: {
-      paddingTop: width < 700 ? h * height * 2 : h * height,
-      justifyContent: "flex-end",
-      paddingBottom: 10,
-    },
-    header: {
-      flexWrap: "wrap",
-      fontSize: 48,
-      color: color,
-      textAlign: "left",
-      lineHeight: 48,
-      fontFamily: "PlayfairDisplay_900Black",
-      flex: 1,
-    },
-  });
   return (
-    <View style={styles.topSection}>
-      <Text style={styles.header}>{children}</Text>
-    </View>
+    <TopSection width={width} height={height * h}>
+      <HeaderText color={color}>{children}</HeaderText>
+    </TopSection>
   );
 }

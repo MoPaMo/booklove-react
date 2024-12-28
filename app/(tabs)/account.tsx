@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import {Text} from "react-native";
 import Container from "@/components/DefaultBGProvider";
+import { Link } from 'expo-router';
 const ContainerStyled = styled(Container)`
   flex: 1;
   justify-content: center;

@@ -19,7 +19,7 @@ const ContainerStyled = styled(Container)`
 const AboutScreen = () => {
   return (
     <ContainerStyled>
-      <Header>Your Books</Header>
+      <Header color={colors.orange}>Your Books</Header>
       <FeedbackComponent />
     </ContainerStyled>
   );

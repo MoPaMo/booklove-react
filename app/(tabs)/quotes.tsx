@@ -87,7 +87,7 @@ const QuoteItem = ({ data }) => {
             {data.quote}{" "}
             <QuoteClose fill={theme.primaryText} height={24} width={24} />
           </QuoteText>
-          <View style={{ flex: 1 }} />
+          <View style={{ flex: 1, flexGrow: 1 }} />
           {data.character && <CharacterText>~ {data.character}</CharacterText>}
           <BookTitle>{data.book.title}</BookTitle>
           <BookInfo>
@@ -179,18 +179,23 @@ const Quotes = () => {
 };
 const Container2 = styled(Container)`
   flex: 1;
+  flexgrow: 1;
   background-color: ${(props) => props.theme.CleanBG};
 `;
 
 const LoadingContainer = styled.View`
   flex: 1;
+  flexgrow: 1;
+
   justify-content: center;
   align-items: center;
 `;
 
 const QuoteContainer = styled.View`
   flex: 1;
+  flexgrow: 1;
   height: ${(props) => props["data-height"] * 0.8}px;
+  min-height: 80vh;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -199,6 +204,7 @@ const QuoteContainer = styled.View`
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;
+  flexgrow: 1;
 `;
 
 const Card = styled.View`
@@ -253,6 +259,8 @@ const ProfileImageContainer = styled.View`
 
 const ActionsContainer = styled.View`
   flex: 1;
+  flexgrow: 1;
+
   flex-direction: column;
   justify-content: space-around;
   width: 80%;
@@ -267,6 +275,8 @@ const ActionButton = styled.TouchableOpacity`
 const styles = StyleSheet.create({
   quoteContent: {
     flex: 1,
+    flexGrow: 1,
+
     alignItems: "flex-start",
   },
   profileImage: {

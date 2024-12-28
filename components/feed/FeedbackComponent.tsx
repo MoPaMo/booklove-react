@@ -36,6 +36,7 @@ const Subtitle = styled(Text)`
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
+    color: ${(props) => props.theme.primaryText};
 `;
 
 const ButtonGroup = styled.View`
@@ -82,7 +83,7 @@ const FeedbackView = () => {
     Linking.openURL(mailtoUrl);
   };
 
-  return (
+  return ( 
     <Container>
       <FeedbackCard>
         <Title>

@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
 import styled from "styled-components/native";
 const fetchQuotes = async () => {
   return [
@@ -69,10 +70,11 @@ const QuoteItem = ({ data }) => {
       <Card>
         <View style={styles.quoteContent}>
           <QuoteText>
-            <Ionicons name="quote-opening" size={24} color="black" />
-            {data.quote}
-            <Ionicons name="quote-closing" size={24} color="black" />
+            <Fontisto name="quote-a-right" size={24} color="black" />{" "}
+            {data.quote}{" "}
+            <Fontisto name="quote-a-left" size={24} color="black" />
           </QuoteText>
+          <View style={{ flex: 1 }} />
           {data.character && <CharacterText>~ {data.character}</CharacterText>}
           <BookTitle>{data.book.title}</BookTitle>
           <BookInfo>
@@ -190,13 +192,13 @@ const Card = styled.View`
 `;
 
 const QuoteText = styled(Text)`
-  font-family: "PlayfairDisplay";
+  font-family: "PlayfairDisplay_400Regular";
   font-size: 30px;
   margin-bottom: 20px;
 `;
 
 const CharacterText = styled(Text)`
-  font-family: "Raleway";
+  font-family: "Raleway_400Regular";
   font-size: 18px;
   font-style: italic;
   margin-bottom: 10px;

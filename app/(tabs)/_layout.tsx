@@ -3,23 +3,29 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { View } from "react-native";
 import colors from "@/utils/colors";
+import styled from "styled-components/native";
+
+const TabBarStyle = styled(Tabs)`
+  shadow-color: #25292e00;
+  background-color: #25292e00;
+  border-top-color: #25292e00;
+  border-top-width: 0;
+`;
+
 export default function TabLayout() {
   return (
     <Tabs
       initialRouteName="index"
       screenOptions={{
         tabBarActiveTintColor: colors.blue,
-        //headerShown: false,
         headerStyle: {
           backgroundColor: "#25292e",
         },
         headerShown: false,
         headerShadowVisible: false,
         headerTintColor: "#fff0",
-
         tabBarStyle: {
           shadowColor: "#25292e00",
-
           backgroundColor: "#25292e00",
           borderTopColor: "#25292e00",
           borderTopWidth: 0,

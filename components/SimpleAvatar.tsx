@@ -8,7 +8,7 @@ const AvatarImage = styled.Image`
   border-color: ${(props) => props.theme.primaryText};
   border-width: 1px;
   border-radius: 9999px;
-  background-color: ${(props) => props.theme.lightGray};
+  background-color: ${(props) => props.theme.CleanBG+"4f"};
   shadow-color: ${(props) => props.theme.BG};
   shadow-offset: 0px 2px;
   shadow-opacity: 0.5;

@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
-
+import {Text} from "react-native";
+import Container from "@/components/DefaultBGProvider";
 const ContainerStyled = styled(Container)`
   flex: 1;
   justify-content: center;
@@ -18,7 +19,7 @@ const Account = () => {
       <TextStyled>This is the Account screen</TextStyled>
       <Link href="/book/a">a book</Link>
     </ContainerStyled>
-  );
+  ); 
 };
 
 export default Account;

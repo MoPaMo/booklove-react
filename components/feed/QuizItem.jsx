@@ -156,7 +156,7 @@ const BookQuizView = ({ triggerSearch }) => {
               </RetryButton>
             </View>
           ) : (
-            <View style={styles.loaderContainer}>
+            <View>
               <ActivityIndicator size="large" color={colors.primary} />
             </View>
           )

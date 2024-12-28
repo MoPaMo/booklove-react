@@ -6,10 +6,10 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
+  StyleSheet,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import styled from "styled-components/native";
-
 const fetchQuotes = async () => {
   return [
     {

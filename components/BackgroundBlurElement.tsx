@@ -3,6 +3,7 @@ import { Dimensions } from "react-native";
 import { BlurView } from "expo-blur";
 import styled from "styled-components/native";
 import colors from "@/utils/colors";
+import { StyleSheet } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 const Container = styled.View`
@@ -35,7 +36,9 @@ const BackgroundBlurElement = () => {
   return (
     <Container>
       <OriginalBG1 source={require("@/assets/images/backgrounds/blur3.png")} />
-      <OriginalBG2 source={require("@/assets/images/backgrounds/blur_hex.png")} />
+      <OriginalBG2
+        source={require("@/assets/images/backgrounds/blur_hex.png")}
+      />
       <BlurredView intensity={8} />
     </Container>
   );

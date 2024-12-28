@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import SimpleAvatar from "@/components/SimpleAvatar";
 
 const Container = styled.View`
   flex-direction: row;

@@ -7,7 +7,7 @@ import BookQuizView from "@/components/feed/QuizItem";
 export default function Feed() {
   return (
     <Container>
-      <BookLoveLogo />
+
       <Text style={styles.text}>Feed</Text>
       <FeedbackView />
       <BookQuizView triggerSearch={()=>{}}/>

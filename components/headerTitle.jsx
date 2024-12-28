@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import {Text, Dimensions} from "react-native";
 
 const TopSection = styled.View`
   padding-top: ${(props) =>

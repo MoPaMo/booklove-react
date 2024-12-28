@@ -1,6 +1,27 @@
-import React, { useState } from "react";
-import { View, TouchableOpacity, StyleSheet, Linking } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import styled from "styled-components/native";
+
+const Container = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-horizontal: 10px;
+`;
+
+const Button = styled.TouchableOpacity`
+  flex: 1;
+  height: 53px;
+  align-items: center;
+  background-color: ${(props) => props.theme.white}fe;
+  border-radius: 21px;
+  padding: 16px;
+  margin-horizontal: 8px;
+  shadow-color: #000;
+  shadow-offset: 4px 4px;
+  shadow-radius: 1px;
+  elevation: 5;
+  background-color: ${(props) => props.theme.white}fe;
+`;
 
 const BookButtonStack = ({ bookItem }) => {
   const [liked, setLiked] = useState(false);
@@ -29,61 +50,37 @@ const BookButtonStack = ({ bookItem }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={[
-          styles.button,
-          {
-            backgroundColor: liked ? "red" : "#fffa",
-            shadowOpacity: liked ? 0 : 0.2,
-          },
-        ]}
+    <Container>
+      <Button
+        style={{
+          backgroundColor: liked ? props.theme.red : props.theme.white,
+          shadow-opacity: liked ? 0 : 0.2,
+        }}
         onPress={handleLikePress}
       >
-        <Ionicons name={liked ? "bookmark" : "bookmark-outline" } size={20} color={liked ? "#fff" : "#000"} />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[
-          styles.button,
-          {
-            shadowOpacity: isButtonPressed ? 0 : 0.2,
-            transform: [{ scale: isButtonPressed ? 0.9 : 1 }],
-          },
-        ]}
+        <Ionicons
+          name={liked ? "bookmark" : "bookmark-outline"}
+          size={20}
+          color={liked ? props.theme.white : props.theme.black}
+        />
+      </Button>
+      <Button
+        style={{
+          shadow-opacity: isButtonPressed ? 0 : 0.2,
+          transform: [{ scale: isButtonPressed ? 0.9 : 1 }],
+        }}
         onPress={handleCartPress}
         onPressIn={() => setIsButtonPressed(true)}
         onPressOut={() => setIsButtonPressed(false)}
       >
-        <Ionicons name="cart-outline" size={20} color="#000" />
-      </TouchableOpacity>
-    </View>
+        <Ionicons
+          name="cart-outline"
+          size={20}
+          color={props.theme.black}
+        />
+      </Button>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    paddingHorizontal: 10,
-  },
-  button: {
-    flex: 1,
-    height: 53,
-    alignItems: "center",
-    backgroundColor: "#fffe",
-    borderRadius: 21,
-    padding: 16,
-    marginHorizontal: 8,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 4,
-      height: 4,
-    },
-    shadowRadius: 1,
-    elevation: 5,
-  },
-});
 
 export default BookButtonStack;

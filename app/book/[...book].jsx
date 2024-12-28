@@ -32,9 +32,10 @@ const Divider = styled.View`
 const Description = styled(Text)`
   font-family: "PlayfairDisplay_400Regular";
   font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 10px;
   color: ${(props) => props.theme.primaryText};
+  max-height: ${(props) => (props.isExpanded ? '500px' : '100px')};
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 `;
 
 const MoreText = styled(Text)`
@@ -71,12 +72,13 @@ const CommentAuthor = styled(Text)`
 `;
 
 const Book = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const color = useTheme();
   const navigation = useNavigation();
   const route = useRoute();
   const { book } = route.params || {};
-
-  useLayoutEffect(() => {
+  const text = "Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five daughters, but his property is entailed and can only be passed to a male heir. His wife also lacks an inheritance, so his family faces...";
+  useLayoutEffect(() => { 
     navigation.setOptions({
       title: book?.title || "Book Details",
       headerBackTitle: "Back",
@@ -88,13 +90,9 @@ const Book = () => {
       <HeaderTitle color={color.cyan}>Pride and Prejudice</HeaderTitle>
       <AuthorText>Jane Austen, 1813</AuthorText>
       <Divider />
-      <Description>
-        Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five
-        daughters, but his property is entailed and can only be passed to a male
-        heir. His wife also lacks an inheritance, so his family faces...{" "}
-        <MoreText onPress={() => alert("Read more")}>
-          more
-        </MoreText>
+      <Description isExpanded={isExpanded} onPress={() => setIsExpanded(!isExpanded)}>
+        {isExpanded ? text : `${text.substring(0, 100)}...`}
+        <MoreText>{isExpanded ? " less" : " more"}</MoreText>
       </Description>
 
       <BookButtonStack />
@@ -114,7 +112,6 @@ const Book = () => {
           <CommentAuthor>Amazing!</CommentAuthor> Jane
         </CommentText>
       </Comment>
-     
     </StyledContainer>
   );
 };

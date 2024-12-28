@@ -44,14 +44,12 @@ const ButtonGroup = styled.View`
 `;
 
 const Button = styled.TouchableOpacity`
-  background-color: ${(props) =>
-    props.selected ? props.theme.red : props.theme.CleanBG}0f;
+  background-color: ${(props) => props.theme.CleanBG}0f;
   border-radius: 23px;
   padding-vertical: 10px;
   padding-horizontal: 20px;
   border-width: 1px;
-  border-color: ${(props) =>
-    props.selected ? props.theme.red : props.theme.indigo};
+  border-color: ${(props) => props.theme.indigo};
 `;
  
 const ButtonText = styled(Text)`

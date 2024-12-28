@@ -217,7 +217,8 @@ const Card = styled.View`
   shadow-opacity: 0.25;
   shadow-radius: 3.84px;
   elevation: 5;
-  width: 80%;
+    flexGrow: 1;
+    flex: 1;
   margin-right: 20px;
 `;
 
@@ -258,12 +259,9 @@ const ProfileImageContainer = styled.View`
 `;
 
 const ActionsContainer = styled.View`
-  flex: 1;
   flexgrow: 1;
-
   flex-direction: column;
   justify-content: space-around;
-  width: 80%;
   color: ${(props) => props.theme.primaryText};
 `;
 

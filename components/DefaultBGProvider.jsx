@@ -1,13 +1,28 @@
-import { Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import styled from "styled-components/native";
 import BackgroundBlurElement from "@/components/BackgroundBlurElement";
 
-export default function Container({ children, style = 0 }) {
+const Background = styled(BackgroundBlurElement)`
+  flex: 1;
+  margin: 16px;
+  overflow: hidden;
+`;
+
+const SafeArea = styled.SafeAreaView`
+  flex: 1;
+`;
+
+const CustomScrollView = styled.ScrollView`
+  flex: 1;
+`;
+
+export default function Container({ children, style = {} }) {
   return (
     <>
-      <BackgroundBlurElement />
-      <SafeAreaView style={styles.container}>
-        <ScrollView >{children}</ScrollView>
-      </SafeAreaView>
+      <Background />
+      <SafeArea style={styles.container}>
+        <CustomScrollView>{children}</CustomScrollView>
+      </SafeArea>
     </>
   );
 }
@@ -16,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 16,
-    overflowX: "none",
+    overflowX: "hidden",
   },
 });
 

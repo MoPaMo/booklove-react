@@ -1,5 +1,27 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
+import styled from "styled-components/native";
+
+const Container = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) =>
+    props.selected ? props.theme.white : props.theme.black};
+  border-radius: 10px;
+  padding-vertical: 10px;
+  padding-horizontal: 20px;
+  margin: 5px;
+`;
+
+const ButtonText = styled(Text)`
+  color: ${(props) => (props.selected ? props.theme.black : props.theme.white)};
+  font-size: 16px;
+  text-align: center;
+`;
 
 const CategoryButtons: React.FC = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -34,55 +56,20 @@ const CategoryButtons: React.FC = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <Container>
       {categories.map((category) => (
-        <TouchableOpacity
+        <Button
           key={category}
-          style={[
-            styles.button,
-            selectedCategories.includes(category) && styles.selectedButton,
-          ]}
+          selected={selectedCategories.includes(category)}
           onPress={() => handleCategoryPress(category)}
         >
-          <Text
-            style={[
-              styles.buttonText,
-              selectedCategories.includes(category) &&
-                styles.selectedButtonText,
-            ]}
-          >
+          <ButtonText selected={selectedCategories.includes(category)}>
             {category}
-          </Text>
-        </TouchableOpacity>
+          </ButtonText>
+        </Button>
       ))}
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-  },
-  button: {
-    backgroundColor: "black",
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    margin: 5,
-  },
-  selectedButton: {
-    backgroundColor: "white",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    textAlign: "center",
-  },
-  selectedButtonText: {
-    color: "black",
-  },
-});
 
 export default CategoryButtons;

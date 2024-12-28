@@ -12,7 +12,7 @@ const ContainerStyled = styled(Container)`
 const TextStyled = styled(Text)`
   font-size: 18px;
   color: ${(props) => props.theme.primaryText};
-`;
+`; 
 
 const Account = () => {
   return (

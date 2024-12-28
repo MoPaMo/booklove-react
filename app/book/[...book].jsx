@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "@/utils/colors";
 import HeaderTitle from "@/components/headerTitle";
@@ -94,7 +94,7 @@ const Book = () => {
         <UserStack />
       </ReadByGroup>
 
-      <Text design="sansSerif" weight="bold" style={styles.readBy}>
+      <Text design="sansSerif" weight="bold" >
         Comments
       </Text>
       <Comment>

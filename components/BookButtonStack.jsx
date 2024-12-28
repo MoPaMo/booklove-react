@@ -1,4 +1,6 @@
-import styled from "styled-components/native";
+import styled, {useTheme} from "styled-components/native";
+import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 
 const Container = styled.View`
   flex-direction: row;
@@ -12,7 +14,7 @@ const Button = styled.TouchableOpacity`
   flex: 1;
   height: 53px;
   align-items: center;
-  background-color: ${(props) => props.theme.white}fe;
+  background-color: ${(props) => props.theme.CleanBG}fe;
   border-radius: 21px;
   padding: 16px;
   margin-horizontal: 8px;
@@ -20,13 +22,13 @@ const Button = styled.TouchableOpacity`
   shadow-offset: 4px 4px;
   shadow-radius: 1px;
   elevation: 5;
-  background-color: ${(props) => props.theme.white}fe;
+  background-color: ${(props) => props.theme.CleanBG}fe;
 `;
 
 const BookButtonStack = ({ bookItem }) => {
   const [liked, setLiked] = useState(false);
   const [isButtonPressed, setIsButtonPressed] = useState(false);
-
+    const colorTheme = useTheme();
   const handleLikePress = () => {
     setLiked(!liked);
     //likeBook(bookItem.id, !liked);
@@ -53,7 +55,7 @@ const BookButtonStack = ({ bookItem }) => {
     <Container>
       <Button
         style={{
-          backgroundColor: (liked ? props.theme.red : props.theme.white),
+          backgroundColor: (liked ? colorTheme.theme.red : colorTheme.theme.CleanBG),
           shadowOpacity: (liked ? 0 : 0.2),
         }}
         onPress={handleLikePress}
@@ -61,7 +63,7 @@ const BookButtonStack = ({ bookItem }) => {
         <Ionicons
           name={liked ? "bookmark" : "bookmark-outline"}
           size={20}
-          color={liked ? props.theme.white : props.theme.black}
+          color={liked ? colorTheme.theme.CleanBG : colorTheme.theme.black}
         />
       </Button>
       <Button
@@ -76,7 +78,7 @@ const BookButtonStack = ({ bookItem }) => {
         <Ionicons
           name="cart-outline"
           size={20}
-          color={props.theme.black}
+          color={colorTheme.theme.black}
         />
       </Button>
     </Container>

@@ -55,7 +55,7 @@ const BookButtonStack = ({ bookItem }) => {
     <Container>
       <Button
         style={{
-          backgroundColor: (liked ? colorTheme.theme.red : colorTheme.theme.CleanBG),
+          backgroundColor: (liked ? colorTheme.red : colorTheme.CleanBG),
           shadowOpacity: (liked ? 0 : 0.2),
         }}
         onPress={handleLikePress}
@@ -63,7 +63,7 @@ const BookButtonStack = ({ bookItem }) => {
         <Ionicons
           name={liked ? "bookmark" : "bookmark-outline"}
           size={20}
-          color={liked ? colorTheme.theme.CleanBG : colorTheme.theme.black}
+          color={liked ? colorTheme.CleanBG : colorTheme.black}
         />
       </Button>
       <Button
@@ -78,7 +78,7 @@ const BookButtonStack = ({ bookItem }) => {
         <Ionicons
           name="cart-outline"
           size={20}
-          color={colorTheme.theme.black}
+          color={colorTheme.black}
         />
       </Button>
     </Container>

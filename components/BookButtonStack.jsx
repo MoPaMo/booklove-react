@@ -63,7 +63,7 @@ const BookButtonStack = ({ bookItem }) => {
         <Ionicons
           name={liked ? "bookmark" : "bookmark-outline"}
           size={20}
-          color={liked ? colorTheme.CleanBG : colorTheme.black}
+          color={liked ? colorTheme.CleanBG : colorTheme.primaryText}
         />
       </Button>
       <Button
@@ -78,7 +78,7 @@ const BookButtonStack = ({ bookItem }) => {
         <Ionicons
           name="cart-outline"
           size={20}
-          color={colorTheme.black}
+          color={colorTheme.primaryText}
         />
       </Button>
     </Container>

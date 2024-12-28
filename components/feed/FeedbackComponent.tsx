@@ -51,7 +51,7 @@ const Button = styled.TouchableOpacity`
   border-width: 1px;
   border-color: ${(props) => props.theme.indigo};
 `;
- 
+
 const ButtonText = styled(Text)`
   color: ${(props) => props.theme.indigo};
   font-size: 16px;
@@ -101,15 +101,15 @@ const FeedbackView = () => {
         </Subtitle>
 
         {likeState === 1 && (
-          <TouchableOpacity onPress={handleReview}>
-            <Text >Leave a review</Text>
-          </TouchableOpacity>
+          <Button onPress={handleReview}>
+            <ButtonText>Leave a review</ButtonText>
+          </Button>
         )}
 
         {likeState === 2 && (
-          <TouchableOpacity  onPress={handleSendFeedback}>
-            <Text >Send feedback</Text>
-          </TouchableOpacity>
+          <Button onPress={handleSendFeedback}>
+            <ButtonText>Send feedback</ButtonText>
+          </Button>
         )}
 
         {likeState === 0 && (

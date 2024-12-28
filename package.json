@@ -46,7 +46,8 @@
     "react-native-shimmer-placeholder": "^2.0.9",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "expo-dev-client": "~5.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

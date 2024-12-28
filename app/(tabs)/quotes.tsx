@@ -185,10 +185,11 @@ const QuoteContainer = styled.View`
 `;
 
 const Card = styled.View`
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: ${(props) => props.theme.CleanBG};
+  color: ${(props) => props.theme.primaryText};
   border-radius: 20px;
   padding: 30px;
-  shadow-color: #000;
+  shadow-color: ${(props) => props.theme.primaryText};
   shadow-offset: 0px 2px;
   shadow-opacity: 0.25;
   shadow-radius: 3.84px;
@@ -199,12 +200,14 @@ const Card = styled.View`
 
 const QuoteText = styled(Text)`
   font-family: "PlayfairDisplay_400Regular";
+  color: ${(props) => props.theme.primaryText};
   font-size: 30px;
   margin-bottom: 20px;
 `;
 
 const CharacterText = styled(Text)`
   font-family: "Raleway_400Regular";
+  color: ${(props) => props.theme.primaryText};
   font-size: 18px;
   font-style: italic;
   margin-bottom: 10px;
@@ -221,6 +224,7 @@ const BookTitle = styled(Text)`
 
 const BookInfo = styled(Text)`
   font-family: "Raleway_400Regular";
+  color: ${(props) => props.theme.primaryText};
   font-size: 16px;
 `;
 
@@ -235,10 +239,12 @@ const ActionsContainer = styled.View`
   flex-direction: column;
   justify-content: space-around;
   width: 80%;
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const ActionButton = styled.TouchableOpacity`
   padding: 10px;
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const styles = StyleSheet.create({

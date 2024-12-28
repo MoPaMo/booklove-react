@@ -10,10 +10,11 @@ import {
 } from "react-native";
 import Container from "@/components/DefaultBGProvider";
 import { Ionicons } from "@expo/vector-icons";
-import { Fontisto } from "@expo/vector-icons";
 import styled, { useTheme } from "styled-components/native";
 import BackgroundBlurElement from "@/components/BackgroundBlurElement";
 import SimpleAvatar from "@/components/SimpleAvatar";
+import QuoteOpen from "@/assets/icons/quoteOpen";
+import QuoteClose from "@/assets/icons/quoteClose";
 
 const Background = styled(BackgroundBlurElement)`
   flex: 1;
@@ -82,13 +83,9 @@ const QuoteItem = ({ data }) => {
       <Card>
         <View style={styles.quoteContent}>
           <QuoteText>
-            <Fontisto
-              name="quote-a-right"
-              size={24}
-              color={theme.primaryText}
-            />{" "}
+            <QuoteOpen width={24} height={24} fill={theme.primaryText} />{" "}
             {data.quote}{" "}
-            <Fontisto name="quote-a-left" size={24} color={theme.primaryText} />
+            <QuoteClose width={24} height={24} fill={theme.primaryText} />
           </QuoteText>
           <View style={{ flex: 1 }} />
           {data.character && <CharacterText>~ {data.character}</CharacterText>}
@@ -103,7 +100,7 @@ const QuoteItem = ({ data }) => {
             size={60}
             source={{ uri: data.user.profile_image_url }}
             style={styles.profileImage}
-            />
+          />
         </ProfileImageContainer>
       </Card>
 

@@ -60,6 +60,24 @@ const fetchQuotes = async () => {
       },
       bookSaved: true,
     },
+    {
+      id: "3",
+      quote: "I declare after all there is no enjoyment like reading!",
+      character: "Caroline Bingley",
+      book: {
+        id: "103",
+        title: "Pride and Prejudice",
+        author: "Jane Austen",
+        year: 1813,
+      },
+      liked: false,
+      user: {
+        id: "user3",
+        name: "User Three",
+        profile_image_url: "https://via.placeholder.com/150",
+      },
+      bookSaved: false,
+    },
   ];
 };
 
@@ -217,8 +235,8 @@ const Card = styled.View`
   shadow-opacity: 0.25;
   shadow-radius: 3.84px;
   elevation: 5;
-    flexGrow: 1;
-    flex: 1;
+  flexgrow: 1;
+  flex: 1;
   margin-right: 20px;
 `;
 

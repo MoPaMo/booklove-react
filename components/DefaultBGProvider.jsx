@@ -14,6 +14,8 @@ const SafeArea = styled.SafeAreaView`
 
 const CustomScrollView = styled.ScrollView`
   flex: 1;
+  flex-grow: 1;
+   flex-direction: column;
 `;
 
 export default function Container({ children, style = {} }) {

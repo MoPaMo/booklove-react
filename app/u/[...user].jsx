@@ -1,52 +1,47 @@
 import React, { useEffect, useState } from "react";
 import { Share, ActivityIndicator } from "react-native";
 import { useRoute } from "@react-navigation/native";
-import styled, {useTheme} from "styled-components/native"; 
+import styled, { useTheme } from "styled-components/native";
+import Container from "@/components/DefaultBGProvider";
 
 const fetchUserData = async (username) => {
-    // Simulate fetching user data from an API
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                name: "John Doe",
-                tag: "johndoe",
-                profilePicture:
-                    "https://randomuser.me/api/portraits/men/32.jpg",
-                favoriteBook: "The Great Gatsby",
-                followers: 120,
-                following: 200,
-                isFollowing: true,
-                lastSavedBooks: [
-                    {
-                        id: 1,
-                        cover:
-                            "https://via.placeholder.com/100x150",
-                    },
-                    {
-                        id: 2,
-                        cover:
-                            "https://via.placeholder.com/100x150",
-                    },
-                    {
-                        id: 3,
-                        cover:
-                            "https://via.placeholder.com/100x150",
-                    },
-                ],
-                booklists: [
-                    { id: 1, name: "To Read" },
-                    { id: 2, name: "Favorites" },
-                ],
-            });
-        }, 1000);
-    })
+  // Simulate fetching user data from an API
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        name: "John Doe",
+        tag: "johndoe",
+        profilePicture: "https://randomuser.me/api/portraits/men/32.jpg",
+        favoriteBook: "The Great Gatsby",
+        followers: 120,
+        following: 200,
+        isFollowing: true,
+        lastSavedBooks: [
+          {
+            id: 1,
+            cover: "https://via.placeholder.com/100x150",
+          },
+          {
+            id: 2,
+            cover: "https://via.placeholder.com/100x150",
+          },
+          {
+            id: 3,
+            cover: "https://via.placeholder.com/100x150",
+          },
+        ],
+        booklists: [
+          { id: 1, name: "To Read" },
+          { id: 2, name: "Favorites" },
+        ],
+      });
+    }, 1000);
+  });
 };
 
-
 // Styled Components
-const Container = styled.ScrollView`
+const CustomContainer = styled.ScrollView`
   padding: 20px;
-  background-color: ${(props) => props.theme.CleanBG};
 `;
 
 const ProfileSection = styled.View`
@@ -129,6 +124,18 @@ const ListSection = styled.View`
   margin-vertical: 10px;
 `;
 
+const LastSavedBooks = styled(ListSection)`
+  background-color: ${(props) => props.theme.CleanBG}1f;
+  color: ${(props) => props.theme.primaryText};
+  border-radius: 20px;
+  padding: 30px;
+  shadow-color: ${(props) => props.theme.primaryText};
+  shadow-offset: 0px 2px;
+  shadow-opacity: 0.25;
+  shadow-radius: 3.84px;
+  elevation: 5;
+`;
+
 const SectionTitle = styled.Text`
   font-family: "PlayfairDisplay_700Bold";
   font-size: 16px;
@@ -144,7 +151,7 @@ const BookImage = styled.Image`
 `;
 
 const BooklistItem = styled.Text`
-  font-family: "Raleway_Regular400"; 
+  font-family: "Raleway_Regular400";
   font-size: 14px;
   margin-vertical: 5px;
   color: ${(props) => props.theme.primaryText};
@@ -172,9 +179,9 @@ const ErrorText = styled.Text`
 
 const UserProfile = () => {
   const route = useRoute();
-  const { username } = route.params; 
+  const { username } = route.params;
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   const theme = useTheme();
   useEffect(() => {
@@ -256,14 +263,14 @@ const UserProfile = () => {
         </FollowItem>
       </FollowSection>
 
-      <ListSection>
+      <LastSavedBooks>
         <SectionTitle>Last Saved Books</SectionTitle>
-        <Container horizontal showsHorizontalScrollIndicator={false}>
+        <CustomContainer horizontal showsHorizontalScrollIndicator={false}>
           {user.lastSavedBooks.map((item) => (
             <BookImage key={item.id} source={{ uri: item.cover }} />
           ))}
-        </Container>
-      </ListSection>
+        </CustomContainer>
+      </LastSavedBooks>
 
       <ListSection>
         <SectionTitle>Created Booklists</SectionTitle>

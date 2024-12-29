@@ -9,6 +9,7 @@ import {
   Raleway_300Light,
   Raleway_400Regular,
   Raleway_700Bold,
+  RobotoMono_400Regular,
 } from "@expo-google-fonts/dev";
 import { ThemeProvider } from "@/context/ThemeContext";
 import ThemeWrapper from "@/context/ThemeWrapper";
@@ -21,6 +22,7 @@ export default function RootLayout() {
     Raleway_300Light,
     Raleway_400Regular,
     Raleway_700Bold,
+    RobotoMono_400Regular
   });
 
   if (!fontsLoaded) {

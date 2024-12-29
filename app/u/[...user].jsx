@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Share, ActivityIndicator } from "react-native";
 import { useRoute } from "@react-navigation/native";
-import styled from "styled-components/native"; 
+import styled, {useTheme} from "styled-components/native"; 
 
 const fetchUserData = async (username) => {
     // Simulate fetching user data from an API
@@ -46,7 +46,7 @@ const fetchUserData = async (username) => {
 // Styled Components
 const Container = styled.ScrollView`
   padding: 20px;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.CleanBG};
 `;
 
 const ProfileSection = styled.View`
@@ -72,14 +72,14 @@ const Username = styled.Text`
 `;
 
 const Tag = styled.Text`
-  font-family: "Raleway_Regular400";
-  color: ${(props) => props.theme.secondaryText};
+  font-family: "Raleway_400Regular";
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const Bio = styled.Text`
   font-family: "RobotoMono_400Regular";
   margin-top: 5px;
-  color: ${(props) => props.theme.secondaryText};
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const FollowButton = styled.TouchableOpacity`
@@ -122,7 +122,7 @@ const FollowCount = styled.Text`
 
 const FollowLabel = styled.Text`
   font-family: "Raleway_Regular400";
-  color: ${(props) => props.theme.secondaryText};
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const ListSection = styled.View`
@@ -154,14 +154,14 @@ const LoadingContainer = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.CleanBG};
 `;
 
 const ErrorContainer = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.CleanBG};
 `;
 
 const ErrorText = styled.Text`
@@ -176,6 +176,7 @@ const UserProfile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); 
 
+  const theme = useTheme();
   useEffect(() => {
     // Fetch user data when the component mounts
     const getUserData = async () => {

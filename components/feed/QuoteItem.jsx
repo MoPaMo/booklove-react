@@ -5,6 +5,7 @@ import styled, { useTheme } from "styled-components/native";
 import SimpleAvatar from "@/components/SimpleAvatar";
 import QuoteOpen from "@/assets/icons/quoteOpen";
 import QuoteClose from "@/assets/icons/quoteClose";
+import { Link } from "expo-router";
 
 const QuoteContainer = styled.View`
   flex: 1;
@@ -96,29 +97,33 @@ const QuoteItem = ({ data }) => {
       data-width={Dimensions.get("window").width}
       data-height={Dimensions.get("window").height}
     >
-      <Card>
-        <View style={styles.quoteContent}>
-          <QuoteText>
-            <QuoteOpen fill={theme.primaryText} height={24} width={24} />{" "}
-            {data.quote}{" "}
-            <QuoteClose fill={theme.primaryText} height={24} width={24} />
-          </QuoteText>
-          <View style={{ flex: 1, flexGrow: 1 }} />
-          {data.character && <CharacterText>~ {data.character}</CharacterText>}
-          <BookTitle>{data.book.title}</BookTitle>
-          <BookInfo>
-            {data.book.author}, {data.book.year}
-          </BookInfo>
-        </View>
+      <Link to={`/book/${data.id}`}>
+        <Card>
+          <View style={styles.quoteContent}>
+            <QuoteText>
+              <QuoteOpen fill={theme.primaryText} height={24} width={24} />{" "}
+              {data.quote}{" "}
+              <QuoteClose fill={theme.primaryText} height={24} width={24} />
+            </QuoteText>
+            <View style={{ flex: 1, flexGrow: 1 }} />
+            {data.character && (
+              <CharacterText>~ {data.character}</CharacterText>
+            )}
+            <BookTitle>{data.book.title}</BookTitle>
+            <BookInfo>
+              {data.book.author}, {data.book.year}
+            </BookInfo>
+          </View>
 
-        <ProfileImageContainer>
-          <SimpleAvatar
-            size={60}
-            source={{ uri: data.user.profile_image_url }}
-            style={styles.profileImage}
-          />
-        </ProfileImageContainer>
-      </Card>
+          <ProfileImageContainer>
+            <SimpleAvatar
+              size={60}
+              source={{ uri: data.user.profile_image_url }}
+              style={styles.profileImage}
+            />
+          </ProfileImageContainer>
+        </Card>
+      </Link>
 
       <ActionsContainer>
         <ActionButton onPress={handleLike}>

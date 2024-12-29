@@ -14,6 +14,7 @@ import {
   Platform,
   UIManager,
 } from "react-native";
+import { useLocalSearchParams, Stack } from "expo-router";
 
 // Enable LayoutAnimation on Android
 if (
@@ -95,26 +96,26 @@ const Book = () => {
   const color = useTheme();
   const navigation = useNavigation();
   const route = useRoute();
-  const { book } = route.params || {};
   const text =
     'Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five daughters, but his property is entailed and can only be passed to a male heir. His wife also lacks an inheritance, so his family faces becoming poor upon his death. Thus, it is imperative that at least one of the daughters marry well to support the others, which is a primary motivation driving the plot. Pride and Prejudice has consistently appeared near the top of lists of "most-loved books" among literary scholars and the reading public. It has become one of the most popular novels in English literature, with over 20 million copies sold, and has inspired many derivatives in modern literature.[1][2] For more than a century, dramatic adaptations, reprints, unofficial sequels, films, and TV versions of Pride and Prejudice have portrayed the memorable characters and themes of the novel, reaching mass audiences';
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: book?.title || "Book Details",
-      headerBackTitle: "Back",
-    });
-  }, [navigation, book]);
 
   const toggleExpansion = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setIsExpanded(!isExpanded);
   };
+  const { book } = useLocalSearchParams();
 
   return (
     <StyledContainer>
+      <Stack.Screen
+        options={{
+          headerTitle: `Book ${book}`,
+          presentation: "push",
+        }}
+      />
       <HeaderTitle color={color.cyan}>Pride and Prejudice</HeaderTitle>
-      <AuthorText>Jane Austen, 1813</AuthorText>
+      <AuthorText>Jane Austen, 1813, {book}</AuthorText>
       <Divider />
       <Description isExpanded={isExpanded} onPress={toggleExpansion}>
         {isExpanded ? text + " " : `${text.substring(0, 100)}... `}

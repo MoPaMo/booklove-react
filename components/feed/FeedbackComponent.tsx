@@ -21,6 +21,7 @@ const FeedbackCard = styled.View`
   shadow-radius: 10px;
   shadow-offset: 0px 0px;
   elevation: 5;
+    width: 90%;
 `;
 
 const Title = styled(Text)`

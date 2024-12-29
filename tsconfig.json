@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "components/DefaultBGProvider.jsx", "components/feed/QuizItem.jsx", "assets/icons/quoteClose.jsx"  ]
+, "components/DefaultBGProvider.jsx", "components/feed/QuizItem.jsx", "assets/icons/quoteClose.jsx", "app/u/[...user].jsx"  ]
 }

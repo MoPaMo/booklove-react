@@ -230,7 +230,7 @@ const SafeArea = styled.SafeAreaView`
 `;
 
 const Card = styled.View`
-  background-color: ${(props) => props.theme.CleanBG};
+  background-color: ${(props) => props.theme.CleanBG}6f;
   color: ${(props) => props.theme.primaryText};
   border-radius: 20px;
   padding: 30px;
@@ -243,6 +243,7 @@ const Card = styled.View`
   flex: 1;
   margin-right: 20px;
 `;
+
 
 const QuoteText = styled(Text)`
   font-family: "PlayfairDisplay_400Regular";

@@ -116,18 +116,17 @@ const QuoteItem = ({ data }) => {
               {data.book.author}, {data.book.year}
             </BookInfo>
           </View>
-
-            <ProfileImageContainer href="/account">
-              <SimpleAvatar
-                size={60}
-                source={{ uri: data.user.profile_image_url }}
-                style={styles.profileImage}
-              />
-            </ProfileImageContainer>
         </Card>
       </Link>
 
       <ActionsContainer>
+        <ProfileImageContainer href={`/u/${data.user.id}`}>
+          <SimpleAvatar
+            size={60}
+            source={{ uri: data.user.profile_image_url }}
+            style={styles.profileImage}
+          />
+        </ProfileImageContainer>
         <ActionButton onPress={handleLike}>
           <Ionicons
             name={liked ? "heart" : "heart-outline"}
@@ -276,15 +275,13 @@ const BookInfo = styled(Text)`
 `;
 
 const ProfileImageContainer = styled(Link)`
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  z-index: 10;
 `;
 
 const ActionsContainer = styled.View`
   flexgrow: 1;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   color: ${(props) => props.theme.primaryText};
 `;
 

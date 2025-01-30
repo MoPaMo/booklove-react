@@ -75,7 +75,7 @@ const Bio = styled.Text`
   font-family: "RobotoMono_400Regular";
   margin-top: 5px;
   color: ${(props) => props.theme.primaryText};
-`;
+`; 
 
 const FollowButton = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.cyan};

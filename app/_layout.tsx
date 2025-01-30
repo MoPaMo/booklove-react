@@ -22,7 +22,7 @@ export default function RootLayout() {
     Raleway_300Light,
     Raleway_400Regular,
     Raleway_700Bold,
-    RobotoMono_400Regular
+    RobotoMono_400Regular,
   });
 
   if (!fontsLoaded) {
@@ -37,8 +37,13 @@ export default function RootLayout() {
   return (
     <ThemeProvider>
       <ThemeWrapper>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen
+            name="(shared)"
+            options={{ headerShown: false, presentation: "containedModal" }}
+          />
+          ˇ
         </Stack>
       </ThemeWrapper>
     </ThemeProvider>
